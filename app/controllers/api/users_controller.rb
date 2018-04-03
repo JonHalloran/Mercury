@@ -11,20 +11,27 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # TODO: Link
+      login(@user)
+      render "/"
     else
-      # TODO:
+      render json: @user.errors.full_messages, status: 418
     end
   end
 
   def update
     @user = User.find(params.id)
-     # TODO: confirm login
-    @user.update(user_params)
+     unless current_user == @user
+       render json: { base: ['invalid credentials'] }, status: 401
+    if @user.update(user_params)
+      render "/"
+    else
+      render json: @user.errors.full_messages, status: 422
+    end
+  end
 
 
   private
   def user_params
-    params.require(user).permit(email, password)
+    params.require(user).permit(email, password, first_name, last_name, photo_url)
   end
 end
