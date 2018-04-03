@@ -2,11 +2,10 @@ class User < ApplicationRecord
   validates :email,
             :first_name,
             :last_name,
-            :password,
             :session_token,
             presence: true
   validates :email, :session_token, uniqueness: true
-  validates :password, length: { min: 6, allow_nil: true }
+  validates :password, length: {minimum: 6, allow_nil: true}
   before_validation :ensure_session_token
 
   attr_reader :password
@@ -21,11 +20,11 @@ class User < ApplicationRecord
   end
 
   def ensure_session_token
-    self.session_token ||= generate_session_token
+    self.session_token ||= User.generate_session_token
   end
 
   def reset_session_token
-    self.session_token = generate_session_token
+    self.session_token = User.generate_session_token
     self.save!
   end
 

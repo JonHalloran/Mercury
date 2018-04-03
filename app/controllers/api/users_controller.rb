@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render "/"
+      render :show
     else
       render json: @user.errors.full_messages, status: 418
     end
@@ -21,10 +21,10 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params.id)
     unless current_user == @user
-      render json: { base: ['invalid credentials'] }, status: 401
+      render json: {base: ['invalid credentials']}, status: 401
     end
     if @user.update(user_params)
-      render "/"
+      render :show
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -33,6 +33,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(user).permit(email, password, first_name, last_name, photo_url)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :photo_url)
   end
 end
