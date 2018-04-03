@@ -20,8 +20,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params.id)
-     unless current_user == @user
-       render json: { base: ['invalid credentials'] }, status: 401
+    unless current_user == @user
+      render json: { base: ['invalid credentials'] }, status: 401
+    end
     if @user.update(user_params)
       render "/"
     else
