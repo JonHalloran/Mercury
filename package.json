@@ -12,16 +12,18 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "webpack": "^4.4.1"
+    "redux-thunk": "^2.2.0",
+    "webpack": "^3.4.1"
   },
-
   "scripts": {
     "postinstall": "webpack",
     "webpack": "webpack --watch"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JonHalloran/Mercury"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.13"
   }
 }

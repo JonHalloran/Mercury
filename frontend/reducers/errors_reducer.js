@@ -1,6 +1,6 @@
-import {CombineReducers} from 'redux'
+import {combineReducers} from 'redux'
 import SessionErrorsReducer from './session_errors_reducer';
 
-export default CombineReducers({
+export default combineReducers({
     session: SessionErrorsReducer
 })
