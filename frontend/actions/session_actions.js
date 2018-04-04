@@ -22,4 +22,4 @@ export const login = userLogin => dispatch =>
     SessionAPIUtil.login(userLogin).then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors)))
 
 export const logout = () => dispatch =>
-    SessionAPIUtil.logout().then(() => dispatch(receiveCurrentUser({})), errors => dispatch(receiveErrors(errors)))
+    SessionAPIUtil.logout().then(() => dispatch(receiveCurrentUser(null)), errors => dispatch(receiveErrors(errors)))

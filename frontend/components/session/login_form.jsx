@@ -21,14 +21,15 @@ class LoginForm extends React.Component {
 
     submitForm(e) {
         e.preventDefault()
-        this.props.login({user: this.state})
+        this.props.login({user: this.state}).then(() => this.props.history.push('/hello/'), () => this.props.history.push('failure'))
     }
 
     render() {
         return (
             <form className='login-form' onSubmit={this.submitForm}>
-                <input type='text' value={this.state.email} onChange={this.update('email')}/>
-                <input type='password' value={this.state.password} onChange={this.update('password')}/>
+                <input type='text' value={this.state.email} placeholder={'Email'} onChange={this.update('email')}/>
+                <input type='password' value={this.state.password} placeholder={'Password'}
+                       onChange={this.update('password')}/>
                 <button>Login</button>
             </form>
         )
