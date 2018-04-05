@@ -18,8 +18,8 @@
     "webpack": "^3.4.1"
   },
   "engines": {
-    "node": "5.6.0",
-    "npm": "8.9.4"
+    "node": "8.9.4",
+    "npm": "5.6.0"
   },
   "scripts": {
     "postinstall": "webpack",
