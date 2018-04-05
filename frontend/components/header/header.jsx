@@ -17,6 +17,11 @@ class Header extends React.Component {
                             onClick={() => this.props.history.push('/signup/')}>SIGN UP
                     </button>
                 </li>
+                <li>
+                    <button key='demo-user' className='demo-user'
+                            onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>Demo User
+                    </button>
+                </li>
             </ul>
         );
         return (
