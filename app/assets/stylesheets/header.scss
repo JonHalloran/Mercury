@@ -79,6 +79,36 @@
       height: 30px;
       width: 30px;
     }
+
+    .dropdown-root {
+      position: relative;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+    }
+
+    .dropdown li {
+      border: 1px solid rgb(211, 214, 220);
+      width: 42px;
+      padding: 0 25px;
+      font-size: 14px;
+      margin: 0;
+      height: 42px;
+      display: flex;
+
+    }
+
+    .dropdown:hover {
+      cursor: pointer;
+    }
+
+    .dropdown-root:hover {
+      .dropdown {
+        display: block;
+      }
+    }
   }
 
 }

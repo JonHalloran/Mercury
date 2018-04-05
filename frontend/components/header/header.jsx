@@ -10,9 +10,21 @@ class Header extends React.Component {
         let loggingIn = session_routes.includes(this.props.location.pathname)
         console.log(loggingIn)
         let buttons = this.props.loggedIn ? (
-            <button key='logout-button' className='logout-button' onClick={this.props.logout}><img
-                src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964206/Mercury/Hermes_pushkin_01.jpg'}/>
-            </button>
+            <div className={'dropdown-root'}>
+                <img
+                    src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964206/Mercury/Hermes_pushkin_01.jpg'}/>
+                <ul className={'dropdown'}>
+                    <li>
+                        <div className={'link'} onClick={() => {
+                            this.props.logout()
+                        }}>Logout
+                        </div>
+                    </li>
+                    <li>
+                        <Link className={'link'} to={'/friends/'}>Friends</Link>
+                    </li>
+                </ul>
+            </div>
         ) : (
             <ul className={'new-session-buttons'}>
                 <li>
@@ -25,7 +37,8 @@ class Header extends React.Component {
                 </li>
                 <li>
                     <button key='demo-user' className='demo-user-login'
-                            onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>Demo User
+                            onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>Demo
+                        User
                     </button>
                 </li>
             </ul>
@@ -40,7 +53,7 @@ class Header extends React.Component {
                 <nav className={'main-nav'}>
                     <div className={'logo'}>
                         <img className={'logo-image'}
-                             src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964575/Mercury/hermes-silver.png'}/>'
+                             src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964575/Mercury/hermes-silver.png'}/>
                         <p className={'logo-name'}>M E R C U R Y</p>
                     </div>
                     {buttons}
