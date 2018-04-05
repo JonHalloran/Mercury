@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mercury</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Mercury</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <% if logged_in? %>
+    <script type="text/javascript">
+        window.currentUser =
+            "<%= render(
+                 "api/users/user.json.jbuilder",
+                 user: current_user
+               ).html_safe %>"
+    </script>
+  <% end %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<%= yield %>
+</body>
 </html>

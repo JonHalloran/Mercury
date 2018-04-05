@@ -1,0 +1,43 @@
+.main-nav {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+  * {
+    background-color: white;
+  }
+
+  .new-session-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .new-session-buttons * {
+    font-size: 13px;
+    font-family: "helvetica neue", Helvetica, Arial, Sans-Serif;
+  }
+  .signup-button {
+    background-color: #1ddd7c;
+    color: white;
+    line-height: 30.8px;
+    align-content: center;
+  }
+
+  li {
+    align-items: center;
+    margin: 5px;
+  }
+
+  .login-link {
+    color: #9297a3;
+    line-height: 30.8px;
+  }
+
+  .login-link:hover {
+    color: #424242;
+  }
+}
+

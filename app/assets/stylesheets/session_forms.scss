@@ -1,0 +1,32 @@
+
+.session-form {
+  width: 320px;
+  font-size: 13px;
+  font-family: "helvetica neue", Helvetica, Arial, Sans-Serif;
+  margin: auto;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    input {
+      margin-bottom: 15px;
+      height: 44px;
+      border: 1px solid #9297a3
+    }
+  }
+
+  button {
+    background-color: #1ddd7c;
+    width: inherit;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.login-form-container {
+
+}

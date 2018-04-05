@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 
 class Header extends React.Component {
 
@@ -9,15 +9,24 @@ class Header extends React.Component {
 
     render() {
         const buttons = this.props.loggedIn ? (
-            [<button key='logout-button' onClick={this.props.logout}>Log Out</button>]
+            <button key='logout-button' className='logout-button' onClick={this.props.logout}>Log Out</button>
         ) : (
-            [<button key='login-button' onClick={() => this.props.history.push('/login/')}>Login</button>,
-                <button key='signup-button' onClick={() => this.props.history.push('/signup/')}>Signup</button>]
+            <ul className={'new-session-buttons'}>
+                <li>
+                    <Link to='/login/' className='login-link'>Log in</Link>
+                </li>
+                <li>
+                    <button key='signup-button' className='signup-button'
+                            onClick={() => this.props.history.push('/signup/')}>SIGN UP
+                    </button>
+                </li>
+            </ul>
         );
         return (
-            <div>
-                {buttons.map(button => button)}
-            </div>
+            <nav className={'main-nav'}>
+                <p>logo goes here</p>
+                {buttons}
+            </nav>
         )
     }
 }

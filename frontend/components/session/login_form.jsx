@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -21,17 +22,20 @@ class LoginForm extends React.Component {
 
     submitForm(e) {
         e.preventDefault()
-        this.props.login({user: this.state}).then(() => this.props.history.push('/hello/'), () => this.props.history.push('failure'))
+        this.props.login({user: this.state}).then(() => this.props.history.push('/dashboard/'), () => this.props.history.push('failure'))
     }
 
     render() {
         return (
-            <form className='login-form' onSubmit={this.submitForm}>
-                <input type='text' value={this.state.email} placeholder={'Email'} onChange={this.update('email')}/>
-                <input type='password' value={this.state.password} placeholder={'Password'}
-                       onChange={this.update('password')}/>
-                <button>Login</button>
-            </form>
+            <div className={'login-form-conatainer session-form'}>
+                <Link to={'/signup/'} className={'login-link-to-signup'}>SIGN UP</Link>
+                <form className='login-form' onSubmit={this.submitForm}>
+                    <input type='text' value={this.state.email} placeholder={'Email'} onChange={this.update('email')}/>
+                    <input type='password' value={this.state.password} placeholder={'Password'}
+                           onChange={this.update('password')}/>
+                    <button>LOG IN</button>
+                </form>
+            </div>
         )
     }
 }
