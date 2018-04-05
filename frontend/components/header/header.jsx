@@ -3,9 +3,6 @@ import {Link} from 'react-router-dom'
 
 class Header extends React.Component {
 
-    componentDidMount() {
-        console.log(this.props)
-    }
 
     render() {
         const buttons = this.props.loggedIn ? (

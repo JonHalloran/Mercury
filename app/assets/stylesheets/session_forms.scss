@@ -2,8 +2,26 @@
 .session-form {
   width: 320px;
   font-size: 13px;
+  padding: 10px;
   font-family: "helvetica neue", Helvetica, Arial, Sans-Serif;
   margin: auto;
+  margin-top: 80px;
+
+  a {
+    width: inherit;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: right;
+    * {
+      display: inline-block;
+      margin: auto;
+      text-align: right;
+    }
+  }
+
+  a:hover * {
+    color: #424242;
+  }
 
   form {
     display: flex;
@@ -14,6 +32,17 @@
       margin-bottom: 15px;
       height: 44px;
       border: 1px solid #9297a3
+    }
+
+    input:focus {
+      background-color: white;
+    }
+
+    select {
+      display: block;
+      padding: 12px 35px 12px 16px;
+      border-radius: 0px;
+
     }
   }
 
@@ -27,6 +56,6 @@
   }
 }
 
-.login-form-container {
-
+.whole-page {
+  height: 100vh;
 }
