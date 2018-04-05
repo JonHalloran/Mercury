@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+API Key
+AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0

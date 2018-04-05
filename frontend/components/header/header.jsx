@@ -24,9 +24,11 @@ class Header extends React.Component {
                 </li>
             </ul>
         );
+
+        let session_routes = ['/login/', '/signup/']
         return (
             <nav className={'main-nav'}>
-                <p>logo goes here</p>
+                <p>logo</p>
                 {buttons}
             </nav>
         )
