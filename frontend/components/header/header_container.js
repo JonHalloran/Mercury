@@ -6,7 +6,6 @@ import Header from "./header"
 const mapStateToProps = ({session}, ownProps) => ({
     currentUser: session.currentUser,
     loggedIn: (session.currentUser !== null),
-    loggingin: (ownProps.match)
 })
 
 const mapDispatchToProps = dispatch => ({

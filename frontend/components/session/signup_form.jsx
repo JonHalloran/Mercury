@@ -33,7 +33,7 @@ class SignUp extends React.Component {
 
 
     render() {
-        const days = range(1, 31)
+        const days = range(2, 31)
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         const years = range(1898, 2007).reverse()
         return (
@@ -41,18 +41,24 @@ class SignUp extends React.Component {
                 <div className={'session-form-container session-form'}>
                     <form className={'signup-form'} onSubmit={this.submitForm}>
                         <Link to={'/login/'} className={'login-link-to-signup'}><span>LOG IN</span></Link>
-                        <input type='text' value={this.state.first_name} placeholder={'First Name'}
+                        <button className={'demo-user'}
+                                onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
+                            USER
+                        </button>
+                        <input type='text' value={this.state.first_name} placeholder={' First Name'}
                                onChange={this.update('first_name')}/>
-                        <input type='text' value={this.state.last_name} placeholder={'Last Name'}
+                        <input type='text' value={this.state.last_name} placeholder={' Last Name'}
                                onChange={this.update('last_name')}/>
-                        <input type='text' value={this.state.email} placeholder={'Email'}
+                        <input type='text' value={this.state.email} placeholder={' Email'}
                                onChange={this.update('email')}/>
                         <div>
+
                             <select value={this.state.day} onChange={this.update('day')}>
                                 <option disabled={true}>Day</option>
                                 <option>{range(31)[1]}</option>
                                 {days.map(day => (<option key={day}>{day}</option>))}
                             </select>
+
                             <select value={this.state.month} onChange={this.update('month')}>
                                 <option disabled={true}>Month</option>
                                 {months.map(month => (<option key={month}>{month}</option>))}
@@ -62,7 +68,7 @@ class SignUp extends React.Component {
                                 {years.map(year => (<option key={year}>{year}</option>))}
                             </select>
                         </div>
-                        <input type='password' value={this.state.password} placeholder={'Password'}
+                        <input type='password' value={this.state.password} placeholder={' Password'}
                                onChange={this.update('password')}/>
                         <button>Login</button>
                     </form>

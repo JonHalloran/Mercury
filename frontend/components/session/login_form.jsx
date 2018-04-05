@@ -30,10 +30,14 @@ class LoginForm extends React.Component {
             <div className={'whole-page'}>
                 <div className={'login-form-conatainer session-form'}>
                     <Link to={'/signup/'} className={'login-link-to-signup'}><span>SIGN UP</span></Link>
+                    <button className={'demo-user'}
+                            onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
+                        USER
+                    </button>
                     <form className='login-form' onSubmit={this.submitForm}>
-                        <input type='text' value={this.state.email} placeholder={'Email'}
+                        <input type='text' value={this.state.email} placeholder={' Email'}
                                onChange={this.update('email')}/>
-                        <input type='password' value={this.state.password} placeholder={'Password'}
+                        <input type='password' value={this.state.password} placeholder={' Password'}
                                onChange={this.update('password')}/>
                         <button>LOG IN</button>
                     </form>

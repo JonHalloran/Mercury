@@ -1,0 +1,26 @@
+.shortcut-links {
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  border-top: 1px solid rgb(211, 214, 220);
+
+  li {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #9297a3;
+    line-height: 40px;
+    font-size: 14px;
+    border-left: 1px solid rgb(211, 214, 220);
+  }
+
+}
+
+.shortcut-links:last-child {
+  border-right: 1px solid rgb(211, 214, 220);
+}
+
+.shortcut-links-div {
+  background-color: #f0f2f4;
+}
