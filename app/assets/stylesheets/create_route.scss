@@ -1,0 +1,43 @@
+.create-route-sidebar {
+  width: 340px;
+  background-color: #fafafa;
+}
+
+.change-center {
+  display: flex;
+  flex-direction: column;
+
+  padding: 8px 12px;
+  .choose-size {
+    margin-bottom: 5px;
+    font-weight: 300;
+    color: rgb(153, 153, 153);
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .zipcode {
+    border: 1px solid rgb(195, 194, 194);
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 10px;
+    color: #555555;
+  }
+
+  .change-center-button {
+    background-image: linear-gradient(rgb(182, 182, 182) 5%, rgb(169, 166, 166) 100%);
+    height: 18px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 5px;
+  }
+
+  .choose-center-zip-and-button {
+    display: flex;
+    flex-direction: row;
+  }
+}

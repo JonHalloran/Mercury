@@ -7,7 +7,9 @@ class CreateRoute extends React.Component {
         super(props)
 
         this.state = {
-            zipcode: ''
+            zipcode: '',
+            showRouteDetails: false,
+            rootName: ''
         }
 
         this.handlChangeZipcode = this.handlChangeZipcode.bind(this)
@@ -32,15 +34,25 @@ class CreateRoute extends React.Component {
 
 
     render() {
+        let rootDetails = this.state.showRootDetails ? '' : <form className={'root-details-form'}>
+            <input className={'root-name'} defaultValue={'Name this map'}/>
+            <button className={'root-name-button'}>SAVE ROUTE</button>
+        </form>;
 
         return (
             <div className={'create-route-page'}>
-                <aside className={'sidebar'}>
+                <aside className={'create-route-sidebar'}>
                     <form className={'change-center'} onSubmit={() => this.handleCenterChange()}>
-                        <input className={'zipcode'} type={'text'} defaultValue={'zipcode'}
-                               onChange={(e) => this.handlChangeZipcode(e)}/>
-                        <button>Search</button>
+                        <p className={'choose-size'}> Choose map location</p>
+                        <div className={'choose-center-zip-and-button'}>
+                            <input className={'zipcode'} type={'text'} defaultValue={'94101'}
+                                   onChange={(e) => this.handlChangeZipcode(e)}/>
+                            <button className={'change-center-button'}>Search</button>
+                        </div>
                     </form>
+                    <div className={'root-details-root'}>
+                        {rootDetails}
+                    </div>
                 </aside>
                 <div id={'map'}>OHHH Shite map broke</div>
 
