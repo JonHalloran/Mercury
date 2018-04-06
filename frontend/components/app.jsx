@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route} from 'react-router'
+import {Route, Switch} from 'react-router'
 import LoginContainer from './session/login_container'
 import SignupContainer from './session/signup_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
@@ -11,10 +11,12 @@ import CreateRoute from './route/create_route'
 export default () => (
     <div>
         <HeaderContainer/>
-        {/*<ProtectedRoute path='/' component={Shortcuts}/>*/}
-        <ProtectedRoute path='/create_route' component={CreateRoute}/>
-        <AuthRoute exact path='/' component={Splash}/>
-        <AuthRoute path='/login' component={LoginContainer}/>
-        <AuthRoute path='/signup' component={SignupContainer}/>
+        <Switch>
+            <AuthRoute exact path='/' component={Splash}/>
+            <AuthRoute path='/login' component={LoginContainer}/>
+            <AuthRoute path='/signup' component={SignupContainer}/>
+            <ProtectedRoute path='/' component={Shortcuts}/>
+            <ProtectedRoute path='/create_route' component={CreateRoute}/>
+        </Switch>
     </div>
 )
