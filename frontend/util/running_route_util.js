@@ -1,10 +1,11 @@
 // copied from google maps api
 let map
 
-let locations = []
-let directionsService
-let directionsDisplay
-let markers = []
+let locations = [];
+let directionsService;
+let directionsDisplay;
+let markers = [];
+let urlsearch;
 
 export const initMap = () => {
     directionsService = new google.maps.DirectionsService();
@@ -31,12 +32,11 @@ export const initMap = () => {
     });
 
 
-    directionsDisplay.setMap(map)
+    directionsDisplay.setMap(map);
     map.addListener('click', (e) => {
-        addWaypoint(e.latLng)
-
+        addWaypoint(e.latLng);
         if (locations.length > 1) {
-            clearFirstMarker()
+            clearFirstMarker();
             calcRoute();
         } else placeMarker(e.latLng, map)
 
@@ -60,20 +60,21 @@ function clearFirstMarker() {
 
 function addWaypoint(latLng) {
     locations.push({location: latLng, stopover: true})
-    console.log(locations)
 }
 
 
 function calcRoute() {
-    let selectedMode = 'WALKING'
+    let selectedMode = 'WALKING';
     let request = {
         origin: locations[0].location,
         destination: locations[locations.length - 1].location,
         waypoints: locations.slice(1, -1),
         travelMode: google.maps.TravelMode[selectedMode]
-    }
+    };
     directionsService.route(request, function (response, status) {
         if (status == 'OK') {
+            console.log('request');
+            console.log('response')
             directionsDisplay.setDirections(response);
         }
     });

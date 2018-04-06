@@ -55,12 +55,14 @@ class SignUp extends React.Component {
                                 onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
                             USER
                         </button>
-                        {errors.map((error) => <p className={'session-error'}>{error}</p>)}
-                        <input type='text' value={this.state.first_name} placeholder={' First Name'}
+                        <div className={'session-errors'}>
+                            {errors.map((error) => <p className={'session-error'}>{error}</p>)}
+                        </div>
+                        <input type='text' value={this.state.first_name} placeholder={'First Name'}
                                onChange={this.update('first_name')}/>
-                        <input type='text' value={this.state.last_name} placeholder={' Last Name'}
+                        <input type='text' value={this.state.last_name} placeholder={'Last Name'}
                                onChange={this.update('last_name')}/>
-                        <input type='text' value={this.state.email} placeholder={' Email'}
+                        <input type='text' value={this.state.email} placeholder={'Email'}
                                onChange={this.update('email')}/>
                         <div>
 
@@ -79,7 +81,7 @@ class SignUp extends React.Component {
                                 {years.map(year => (<option key={year}>{year}</option>))}
                             </select>
                         </div>
-                        <input type='password' value={this.state.password} placeholder={' Password'}
+                        <input type='password' value={this.state.password} placeholder={'Password'}
                                onChange={this.update('password')}/>
                         <button>Login</button>
                     </form>

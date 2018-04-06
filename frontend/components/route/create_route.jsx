@@ -14,7 +14,6 @@ class CreateRoute extends React.Component {
 
     componentDidMount() {
         window.initMap = initMap;
-        console.log(initMap);
         const script = document.createElement("script");
 
         script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";

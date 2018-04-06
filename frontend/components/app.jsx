@@ -11,7 +11,7 @@ import CreateRoute from './route/create_route'
 export default () => (
     <div>
         <HeaderContainer/>
-        <ProtectedRoute path='/' component={Shortcuts}/>
+        {/*<ProtectedRoute path='/' component={Shortcuts}/>*/}
         <ProtectedRoute path='/create_route' component={CreateRoute}/>
         <AuthRoute exact path='/' component={Splash}/>
         <AuthRoute path='/login' component={LoginContainer}/>

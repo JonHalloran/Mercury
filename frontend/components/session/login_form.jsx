@@ -25,11 +25,6 @@ class LoginForm extends React.Component {
         this.props.login({user: this.state}).then(() => this.props.history.push('/dashboard/'), () => console.log(this.props))
     }
 
-    componentDidMount() {
-        console.log('errors', this.props.clearErrors)
-        this.props.clearErrors()
-    }
-
     render() {
 
         let errors = []
@@ -44,12 +39,13 @@ class LoginForm extends React.Component {
                             onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
                         USER
                     </button>
-
-                    {errors.map((error) => <p className={'session-error'}>{error}</p>)}
+                    <div>
+                        {errors.map((error) => <p className={'session-error'}>{error}</p>)}
+                    </div>
                     <form className='login-form' onSubmit={this.submitForm}>
-                        <input type='text' value={this.state.email} placeholder={' Email'}
+                        <input type='text' value={this.state.email} placeholder={'Email'}
                                onChange={this.update('email')}/>
-                        <input type='password' value={this.state.password} placeholder={' Password'}
+                        <input type='password' value={this.state.password} placeholder={'Password'}
                                onChange={this.update('password')}/>
                         <button>LOG IN</button>
                     </form>

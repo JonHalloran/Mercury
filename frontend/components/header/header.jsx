@@ -14,7 +14,7 @@ class Header extends React.Component {
                 <ul className={'dropdown'}>
                     <li>
                         <div className={'link'} onClick={() => {
-                            this.props.logout()
+                            this.props.logout().then(() => this.props.history.push('/'))
                         }}>Logout
                         </div>
                     </li>
@@ -49,7 +49,9 @@ class Header extends React.Component {
         return (
             <div className={'full-nav-bar'}>
                 <nav className={'main-nav'}>
-                    <div className={'logo'}>
+                    <div className={'logo link'} onClick={() => {
+                        this.props.history.push('/')
+                    }}>
                         <img className={'logo-image'}
                              src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964575/Mercury/hermes-silver.png'}/>
                         <p className={'logo-name'}>M E R C U R Y</p>
