@@ -31,11 +31,21 @@ class SignUp extends React.Component {
         this.props.signup({user: this.state})
     }
 
+    componentDidMount() {
+        console.log('errors', this.props.clearErrors)
+        this.props.clearErrors()
+    }
+
 
     render() {
         const days = range(2, 31)
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         const years = range(1898, 2007).reverse()
+        let errors = []
+        if (this.props.sess_errors.responseJSON) {
+            errors = this.props.sess_errors.responseJSON
+        }
+        console.log('errors2', errors)
         return (
             <div className={'whole-page'}>
                 <div className={'session-form-container session-form'}>
@@ -45,6 +55,7 @@ class SignUp extends React.Component {
                                 onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
                             USER
                         </button>
+                        {errors.map((error) => <p className={'session-error'}>{error}</p>)}
                         <input type='text' value={this.state.first_name} placeholder={' First Name'}
                                onChange={this.update('first_name')}/>
                         <input type='text' value={this.state.last_name} placeholder={' Last Name'}

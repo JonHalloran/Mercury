@@ -22,10 +22,20 @@ class LoginForm extends React.Component {
 
     submitForm(e) {
         e.preventDefault()
-        this.props.login({user: this.state}).then(() => this.props.history.push('/dashboard/'), () => this.props.history.push('failure'))
+        this.props.login({user: this.state}).then(() => this.props.history.push('/dashboard/'), () => console.log(this.props))
+    }
+
+    componentDidMount() {
+        console.log('errors', this.props.clearErrors)
+        this.props.clearErrors()
     }
 
     render() {
+
+        let errors = []
+        if (this.props.sess_errors.responseJSON) {
+            errors = this.props.sess_errors.responseJSON
+        }
         return (
             <div className={'whole-page'}>
                 <div className={'login-form-conatainer session-form'}>
@@ -34,6 +44,8 @@ class LoginForm extends React.Component {
                             onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
                         USER
                     </button>
+
+                    {errors.map((error) => <p className={'session-error'}>{error}</p>)}
                     <form className='login-form' onSubmit={this.submitForm}>
                         <input type='text' value={this.state.email} placeholder={' Email'}
                                onChange={this.update('email')}/>

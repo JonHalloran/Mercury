@@ -6,11 +6,13 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import HeaderContainer from './header/header_container'
 import Shortcuts from './shortcuts/shortcuts'
 import Splash from './splash/splash'
+import CreateRoute from './route/create_route'
 
 export default () => (
     <div>
         <HeaderContainer/>
-        <ProtectedRoute path='/dashboard' component={Shortcuts}/>
+        <ProtectedRoute path='/' component={Shortcuts}/>
+        <ProtectedRoute path='/create_route' component={CreateRoute}/>
         <AuthRoute exact path='/' component={Splash}/>
         <AuthRoute path='/login' component={LoginContainer}/>
         <AuthRoute path='/signup' component={SignupContainer}/>
