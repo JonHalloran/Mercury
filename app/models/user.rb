@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :routes,
+           class_name: :Route,
+           foreign_key: :user_id
+
   def self.find_user_by_credentials(email, password)
     user = User.find_by(email: email)
     return user if user && BCrypt::Password.new(user.password_digest).is_password?(password)

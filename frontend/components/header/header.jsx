@@ -5,10 +5,8 @@ class Header extends React.Component {
 
 
     render() {
-        console.log(this.props)
         let session_routes = ['/login/', '/signup/', '/login', '/signup']
         let loggingIn = session_routes.includes(this.props.location.pathname)
-        console.log(loggingIn)
         let buttons = this.props.loggedIn ? (
             <div className={'dropdown-root'}>
                 <img
