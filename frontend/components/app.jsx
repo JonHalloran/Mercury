@@ -16,7 +16,7 @@ export default () => (
             <AuthRoute path='/login' component={LoginContainer}/>
             <AuthRoute path='/signup' component={SignupContainer}/>
             <ProtectedRoute path='/' component={Shortcuts}/>
-            <ProtectedRoute path='/create_route' component={CreateRoute}/>
         </Switch>
+        <ProtectedRoute path='/create_route' component={CreateRoute}/>
     </div>
 )

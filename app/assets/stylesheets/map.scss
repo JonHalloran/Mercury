@@ -1,4 +1,14 @@
-#map {
-  height: 500px;
-  width: 500px;
+
+.create-route-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  #map {
+
+    height: 100vh;
+    flex-grow: 1;
+    width: 500px;
+
+  }
 }

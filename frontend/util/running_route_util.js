@@ -1,22 +1,25 @@
 // copied from google maps api
-let map
-
 let locations = [];
 let directionsService;
 let directionsDisplay;
 let markers = [];
 let urlsearch;
+let geocoder;
+let map;
 
-export const initMap = () => {
+export const initMap = (center = {lat: 37.77949, lng: -122.4194}) => () => {
+    console.log(center)
     directionsService = new google.maps.DirectionsService();
     directionsDisplay = new google.maps.DirectionsRenderer();
-    let sanFran = {lat: 37.77949, lng: -122.4194};
-    let map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 14,
-            center: sanFran,
-            disableDefaultUI: true,
-        })
+
+    console.log(geocoder)
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: center,
+        disableDefaultUI: true,
+    })
     ;
+    console.log('mapInit', map)
     map.setOptions({
         styles: [
             {
@@ -65,7 +68,7 @@ function addWaypoint(latLng) {
 
 function calcRoute() {
     let selectedMode = 'WALKING';
-    let request = {
+    request = {
         origin: locations[0].location,
         destination: locations[locations.length - 1].location,
         waypoints: locations.slice(1, -1),
@@ -79,3 +82,23 @@ function calcRoute() {
         }
     });
 }
+
+//Call this wherever needed to actually handle the display
+export const codeAddress = (zipCode) => {
+    geocoder = new google.maps.Geocoder();
+    console.log('geocoder', geocoder)
+    console.log('zipCode', zipCode)
+    console.log('map', map)
+    geocoder.geocode({
+        'address': zipCode, "componentRestrictions": {"country": "US"}
+    }, function (results, status) {
+
+        if (status == google.maps.GeocoderStatus.OK) {
+
+            map.setCenter(results[0].geometry.location);
+
+        } else {
+            alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+};
