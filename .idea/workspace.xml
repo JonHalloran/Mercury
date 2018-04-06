@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aca7ec21-f454-49bc-90ed-3d0fa771dd4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/map.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/util/running_route_util.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/session_forms.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/session_forms.scss" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/sessions_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/session_actions.js" afterPath="$PROJECT_DIR$/frontend/actions/session_actions.js" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" afterPath="$PROJECT_DIR$/frontend/components/app.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/create_route/create_route.jsx" afterPath="$PROJECT_DIR$/frontend/components/route/create_route.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/login_container.js" afterPath="$PROJECT_DIR$/frontend/components/session/login_container.js" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/login_form.jsx" afterPath="$PROJECT_DIR$/frontend/components/session/login_form.jsx" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/signup_container.js" afterPath="$PROJECT_DIR$/frontend/components/session/signup_container.js" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/signup_form.jsx" afterPath="$PROJECT_DIR$/frontend/components/session/signup_form.jsx" />
+      <change beforePath="$PROJECT_DIR$/frontend/util/running_route_util.js" afterPath="$PROJECT_DIR$/frontend/util/running_route_util.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -34,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="running_route_util.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="running_route_util.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/util/running_route_util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="236">
+              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -48,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/components/session/login_container.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="80" lean-forward="true" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+              <caret line="14" column="80" lean-forward="false" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -56,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="session_forms.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="session_forms.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/session_forms.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="746">
@@ -181,7 +169,6 @@
         <option value="$PROJECT_DIR$/frontend/components/app.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/route/create_route.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/map.scss" />
-        <option value="$PROJECT_DIR$/frontend/util/running_route_util.js" />
         <option value="$PROJECT_DIR$/app/controllers/api/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/frontend/actions/session_actions.js" />
         <option value="$PROJECT_DIR$/frontend/components/session/signup_container.js" />
@@ -189,6 +176,7 @@
         <option value="$PROJECT_DIR$/frontend/components/session/login_form.jsx" />
         <option value="$PROJECT_DIR$/frontend/components/session/login_container.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/session_forms.scss" />
+        <option value="$PROJECT_DIR$/frontend/util/running_route_util.js" />
       </list>
     </option>
   </component>
@@ -431,12 +419,12 @@
       <workItem from="1522788155184" duration="81000" />
       <workItem from="1522788288645" duration="3048000" />
       <workItem from="1522791496067" duration="72558000" />
-      <workItem from="1523030359290" duration="2218000" />
+      <workItem from="1523030359290" duration="4079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78044000" />
+    <option name="totallyTimeSpent" value="79905000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -787,14 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/util/running_route_util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -874,7 +854,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/components/session/login_container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="80" lean-forward="true" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+          <caret line="14" column="80" lean-forward="false" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -885,6 +865,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="746">
           <caret line="97" column="14" lean-forward="false" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/util/running_route_util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="34" />
           <folding />
         </state>
       </provider>
