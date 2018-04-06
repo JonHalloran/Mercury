@@ -4,6 +4,7 @@ let map
 let locations = []
 let directionsService
 let directionsDisplay
+let markers = []
 
 export const initMap = () => {
     directionsService = new google.maps.DirectionsService();
@@ -15,22 +16,47 @@ export const initMap = () => {
             disableDefaultUI: true,
         })
     ;
+    map.setOptions({
+        styles: [
+            {
+                featureType: 'poi',
+                stylers: [{visibility: 'off'}]
+            },
+            {
+                featureType: 'transit',
+                elementType: 'labels.icon',
+                stylers: [{visibility: 'off'}]
+            }
+        ]
+    });
+
+
     directionsDisplay.setMap(map)
     map.addListener('click', (e) => {
-        placeMarker(e.latLng, map)
+        addWaypoint(e.latLng)
+
+        if (locations.length > 1) {
+            clearFirstMarker()
+            calcRoute();
+        } else placeMarker(e.latLng, map)
+
     })
 
-}
+};
 
 function placeMarker(latLng, map) {
     let marker = new google.maps.Marker({
         position: latLng,
         map: map
     });
-
-    addWaypoint(latLng)
-    calcRoute()
+    markers.push(marker)
 }
+
+
+function clearFirstMarker() {
+    markers[0].setMap(null)
+}
+
 
 function addWaypoint(latLng) {
     locations.push({location: latLng, stopover: true})
