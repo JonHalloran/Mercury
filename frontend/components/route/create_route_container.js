@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
-import {createRoute} from "../../util/running_route_util";
+import {createRoute} from "../../actions/route_actions";
 import CreateRoute from './create_route'
 
 const mapStateToProps = state => ({

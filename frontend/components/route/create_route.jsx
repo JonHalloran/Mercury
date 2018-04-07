@@ -9,12 +9,13 @@ class CreateRoute extends React.Component {
         this.state = {
             zipcode: '',
             showRouteDetails: true,
-            rootName: ''
+            routeName: ''
         }
 
         this.handlChangeZipcode = this.handlChangeZipcode.bind(this);
         this.handleToggleRouteDetails = this.handleToggleRouteDetails.bind(this);
         this.handleNewRoute = this.handleNewRoute.bind(this)
+        this.handleChangeName = this.handleChangeName.bind(this)
     }
 
 
@@ -38,9 +39,19 @@ class CreateRoute extends React.Component {
         this.setState({showRouteDetails: !this.state.showRouteDetails})
     }
 
+    handleChangeName(e) {
+        this.setState({routeName: e.target.value})
+    }
+
     handleNewRoute() {
-        let request = getRequest()
-        console.log(JSON.stringify(request))
+        let request = getRequest();
+        let newRoute = {
+            request: JSON.stringify(request),
+            name: this.state.routeName,
+            description: "hello"
+        };
+        console.log(JSON.stringify(request));
+        this.props.createRoute(newRoute);
     }
 
 
@@ -48,10 +59,12 @@ class CreateRoute extends React.Component {
         console.log('details', this.state.showRouteDetails)
         let rootDetails;
 
-        rootDetails = this.state.showRouteDetails ? <form className={'route-details-form'}>
-            <input className={'route-name'} placeholder={'Name this map'}/>
-            <button className={'route-name-button'} onClick={() => this.handleNewRoute()}>SAVE ROUTE</button>
-        </form> : '';
+        rootDetails = this.state.showRouteDetails ?
+            <form className={'route-details-form'} onSubmit={() => this.handleNewRoute()}>
+                <input className={'route-name'} placeholder={'Name this map'} value={this.state.routeName}
+                       onChange={(e) => this.handleChangeName(e)}/>
+                <button className={'route-name-button'}>SAVE ROUTE</button>
+            </form> : '';
         console.log('rootDetails', rootDetails)
         return (
             <div className={'create-route-page'}>

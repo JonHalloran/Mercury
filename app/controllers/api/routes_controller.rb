@@ -11,6 +11,8 @@ class Api::RoutesController < ApplicationController
 
   def create
     @route = Route.new(route_params)
+    @route.creator = current_user
+    p @route
     if @route.save
       render :show
     else
@@ -21,6 +23,6 @@ class Api::RoutesController < ApplicationController
   private
 
   def route_params
-    params.require(route).permit(:user_id, :description, :request, :name)
+    params.require(:route).permit(:description, :request, :name)
   end
 end
