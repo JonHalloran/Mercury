@@ -1,5 +1,5 @@
 import React from 'react'
-import {initMap, codeAddress} from "../../util/google_api_util";
+import {initMap, codeAddress, getRequest} from "../../util/google_api_util";
 
 
 class CreateRoute extends React.Component {
@@ -14,6 +14,7 @@ class CreateRoute extends React.Component {
 
         this.handlChangeZipcode = this.handlChangeZipcode.bind(this);
         this.handleToggleRouteDetails = this.handleToggleRouteDetails.bind(this);
+        this.handleNewRoute = this.handleNewRoute.bind(this)
     }
 
 
@@ -38,7 +39,8 @@ class CreateRoute extends React.Component {
     }
 
     handleNewRoute() {
-
+        let request = getRequest()
+        console.log(JSON.stringify(request))
     }
 
 
@@ -48,7 +50,7 @@ class CreateRoute extends React.Component {
 
         rootDetails = this.state.showRouteDetails ? <form className={'route-details-form'}>
             <input className={'route-name'} placeholder={'Name this map'}/>
-            <button className={'route-name-button'}>SAVE ROUTE</button>
+            <button className={'route-name-button'} onClick={() => this.handleNewRoute()}>SAVE ROUTE</button>
         </form> : '';
         console.log('rootDetails', rootDetails)
         return (
