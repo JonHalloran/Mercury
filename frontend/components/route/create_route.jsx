@@ -1,5 +1,5 @@
 import React from 'react'
-import {initMap, codeAddress} from "../../util/running_route_util";
+import {initMap, codeAddress} from "../../util/google_api_util";
 
 
 class CreateRoute extends React.Component {
@@ -8,11 +8,12 @@ class CreateRoute extends React.Component {
 
         this.state = {
             zipcode: '',
-            showRouteDetails: false,
+            showRouteDetails: true,
             rootName: ''
         }
 
-        this.handlChangeZipcode = this.handlChangeZipcode.bind(this)
+        this.handlChangeZipcode = this.handlChangeZipcode.bind(this);
+        this.handleToggleRouteDetails = this.handleToggleRouteDetails.bind(this);
     }
 
 
@@ -32,25 +33,36 @@ class CreateRoute extends React.Component {
         this.setState({zipcode: e.target.value})
     }
 
+    handleToggleRouteDetails() {
+        this.setState({showRouteDetails: !this.state.showRouteDetails})
+    }
+
+    handleNewRoute() {
+
+    }
+
 
     render() {
-        let rootDetails = this.state.showRootDetails ? '' : <form className={'root-details-form'}>
-            <input className={'root-name'} defaultValue={'Name this map'}/>
-            <button className={'root-name-button'}>SAVE ROUTE</button>
-        </form>;
+        console.log('details', this.state.showRouteDetails)
+        let rootDetails;
 
+        rootDetails = this.state.showRouteDetails ? <form className={'route-details-form'}>
+            <input className={'route-name'} placeholder={'Name this map'}/>
+            <button className={'route-name-button'}>SAVE ROUTE</button>
+        </form> : '';
+        console.log('rootDetails', rootDetails)
         return (
             <div className={'create-route-page'}>
                 <aside className={'create-route-sidebar'}>
                     <form className={'change-center'} onSubmit={() => this.handleCenterChange()}>
                         <p className={'choose-size'}> Choose map location</p>
                         <div className={'choose-center-zip-and-button'}>
-                            <input className={'zipcode'} type={'text'} defaultValue={'94101'}
+                            <input className={'zipcode'} type={'text'} placeholder={'94101'}
                                    onChange={(e) => this.handlChangeZipcode(e)}/>
                             <button className={'change-center-button'}>Search</button>
                         </div>
                     </form>
-                    <div className={'root-details-root'}>
+                    <div className={'route-details-root'}><span onClick={() => this.handleToggleRouteDetails()}>Route Details</span>
                         {rootDetails}
                     </div>
                 </aside>

@@ -1,13 +1,17 @@
 .create-route-sidebar {
   width: 340px;
   background-color: #fafafa;
+
+  button {
+    border-radius: 5px;
+  }
 }
 
 .change-center {
   display: flex;
   flex-direction: column;
-
   padding: 8px 12px;
+
   .choose-size {
     margin-bottom: 5px;
     font-weight: 300;
@@ -28,7 +32,6 @@
     background-image: linear-gradient(rgb(182, 182, 182) 5%, rgb(169, 166, 166) 100%);
     height: 18px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
-    border-radius: 5px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -39,5 +42,43 @@
   .choose-center-zip-and-button {
     display: flex;
     flex-direction: row;
+  }
+
+}
+
+.route-details-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+
+  .route-name {
+    border: 1px solid rgb(195, 194, 194);
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 10px;
+    color: rgb(153, 153, 153);
+  }
+
+  .route-name-button {
+    background: linear-gradient(to bottom, #ff9628 5%, #ff8714 100%);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 5.5px 0;
+    margin-top: 10px;
+  }
+
+  .route-name-button:hover {
+    background-image: linear-gradient(rgb(240, 138, 21) 5%, rgb(229, 110, 6) 100%);
+  }
+}
+
+.route-details-root {
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top: 1px solid #9297a3;
+
+  span {
+    cursor: pointer;
   }
 }

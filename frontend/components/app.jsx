@@ -6,7 +6,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import HeaderContainer from './header/header_container'
 import Shortcuts from './shortcuts/shortcuts'
 import Splash from './splash/splash'
-import CreateRoute from './route/create_route'
+import CreateRouteContainer from './route/create_route_container'
 
 export default () => (
     <div>
@@ -17,6 +17,6 @@ export default () => (
             <AuthRoute path='/signup' component={SignupContainer}/>
             <ProtectedRoute path='/' component={Shortcuts}/>
         </Switch>
-        <ProtectedRoute path='/create_route' component={CreateRoute}/>
+        <ProtectedRoute path='/create_route' component={CreateRouteContainer}/>
     </div>
 )
