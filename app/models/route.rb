@@ -1,5 +1,5 @@
 class Route < ApplicationRecord
-  validates :creator, :name, :description, :request, presence: true
+  validates :creator, :name, :description, :response, presence: true
 
   belongs_to :creator,
              class_name: :User,

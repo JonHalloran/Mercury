@@ -71,8 +71,8 @@ export const removeLastWaypoint = () => {
     if (locations.length > 1) {
         calcRoute()
     } else if (length === 1) {
-        console.log(locations)
-        placeMarker(locations[0].location, map)
+        console.log(locations);
+        placeMarker(locations[0].location, map);
         directionsDisplay.setMap(null)
     } else {
         clearFirstMarker();
@@ -80,7 +80,7 @@ export const removeLastWaypoint = () => {
 };
 
 export const removeAllWaypoint = () => {
-    console.log('removeall')
+    console.log('removeall');
     locations = [];
     directionsDisplay.setMap(null)
 };

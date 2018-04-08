@@ -27,10 +27,10 @@ class CreateRoute extends React.Component {
 
 
     componentDidMount() {
-        if (mapExists()) {
-            window.initMap()
-            return undefined;
-        }
+        // if (mapExists()) {
+        //     window.initMap()
+        //     return undefined;
+        // }
         window.initMap = initMap();
         const script = document.createElement("script");
         script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
@@ -38,9 +38,6 @@ class CreateRoute extends React.Component {
         document.body.appendChild(script);
     }
 
-    componentWillUnmount() {
-        mapExists();
-    }
 
     handleCenterChange() {
         codeAddress(this.state.zipcode)
@@ -60,11 +57,11 @@ class CreateRoute extends React.Component {
 
     handleNewRoute() {
         let response = getResponse();
-        let distance = response.routes[0].legs[0].distance.text
-        let start_location = response.routes[0].legs[0].start_address
+        let distance = response.routes[0].legs[0].distance.text;
+        let start_location = response.routes[0].legs[0].start_address;
         let
             newRoute = {
-                request: response.routes[0].overview_polyline,
+                response: JSON.stringify(response),
                 name: this.state.routeName,
                 description: `This is a ${distance} route that starts at ${start_location}`
             };
