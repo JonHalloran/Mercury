@@ -84,6 +84,13 @@
   }
 
   .route-show-aside {
-    width: 300px;
+    min-width: 300px;
+
+    .route-show-aside-butons {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
   }
 }

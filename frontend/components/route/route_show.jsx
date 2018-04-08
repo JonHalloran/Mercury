@@ -1,37 +1,34 @@
 import React from "react"
 import {calcRoute, initMap, mapExists} from "../../util/google_api_util";
 
-
 class RouteShow extends React.Component {
 
+    constructor(props) {
+        super(props)
+    }
+
     componentDidMount() {
-        this.props.retrieveRoute(this.props.match.params.routeId).then((response) => console.log(response.route))
-        if (mapExists()) {
-            window.initMap()
-            return undefined;
-        }
         window.initMap = initMap();
-        const script = document.createElement("script");
+        console.log("here");
+        console.log($('script[src*="load.js"]'))
+        let script = document.createElement("script");
         script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
         script.async = true;
         document.body.appendChild(script);
+        this.props.retrieveRoute(this.props.match.params.routeId)
+            .then(response => setTimeout(() => calcRoute(JSON.parse(response.route.request)), 1000));
+
+        console.log('end of did mount')
     }
 
     componentWillReceiveProps(newProps) {
-        console.log('receiveProps');
-        console.log('props change', newProps);
-        console.log(JSON.parse(this.props === newProps));
         if (this.props.match.params.routeId !== newProps.match.params.routeId) {
-            this.props.retrieveRoute(newProps.match.params.routeId);
-        } else {
-            setTimeout(calcRoute(JSON.parse(newProps.route.request)), 500);
+            this.props.retrieveRoute(newProps.match.params.routeId).then(response => calcRoute(JSON.parse(response.route.request)))
         }
     }
 
-
     render() {
         let route = this.props.route;
-        console.log("render route", this.props.route);
         let distance = [0, 'miles'];
         let origin = 'Neverland';
         let creator_name = "Captain Hook";
@@ -39,7 +36,6 @@ class RouteShow extends React.Component {
         let description = 'description';
 
         if (route) {
-            console.log("route", route);
             let response = route.response;
             name = route.name;
             let parsed = JSON.parse(response);
@@ -47,9 +43,7 @@ class RouteShow extends React.Component {
             let origin_split = parsed.start_address.split(', ');
             description = route.description;
             origin = origin_split[1] + ', ' + origin_split[2].slice(0, 2);
-            console.log('origin split', origin_split);
             creator_name = route.creator.first_name + ' ' + route.creator.last_name
-            console.log(route);
         }
         return (
             <div className={'route-show'}>
@@ -81,7 +75,15 @@ class RouteShow extends React.Component {
                     <div id={'map'}>OHHH SHITE MAP IS BROKEN</div>
                 </main>
                 <aside className={'route-show-aside'}>
-
+                    <div className={'route-show-aside-buttons'}>
+                        <button className={'route-show-create-route-button'}
+                                onClick={() => this.props.history.push('/create_route/')}> Create Route
+                        </button>
+                        <button className={'route-show-log-workout'}
+                                onClick={() => this.props.history.push(`/routes/${route.routeId}/log_workout/`)}>Log
+                            Workout
+                        </button>
+                    </div>
                 </aside>
 
             </div>
