@@ -6,15 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aca7ec21-f454-49bc-90ed-3d0fa771dd4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/components/route/route_show.jsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontend/components/route/route_show_container.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/create_route.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/create_route.scss" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/routes_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/routes_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/route_actions.js" afterPath="$PROJECT_DIR$/frontend/actions/route_actions.js" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" afterPath="$PROJECT_DIR$/frontend/components/app.jsx" />
       <change beforePath="$PROJECT_DIR$/frontend/components/route/create_route.jsx" afterPath="$PROJECT_DIR$/frontend/components/route/create_route.jsx" />
       <change beforePath="$PROJECT_DIR$/frontend/util/google_api_util.js" afterPath="$PROJECT_DIR$/frontend/util/google_api_util.js" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -30,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4830741">
+    <splitter split-orientation="horizontal" split-proportion="0.73002756">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="route_actions.js" pinned="false" current-in-tab="false">
@@ -56,15 +52,15 @@
           <file leaf-file-name="create_route.jsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/components/route/create_route.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="109">
-                  <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                <state relative-caret-position="576">
+                  <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
-                    <marker date="1523149688000" expanded="true" signature="2775:4054" ph="..." />
-                    <marker date="1523149688000" expanded="true" signature="2834:3975" ph="..." />
-                    <marker date="1523149688000" expanded="true" signature="3083:3376" ph="..." />
-                    <marker date="1523149688000" expanded="true" signature="3177:3225" ph="..." />
-                    <marker date="1523149688000" expanded="true" signature="3811:3950" ph="..." />
+                    <marker date="1523151265000" expanded="true" signature="2635:3914" ph="..." />
+                    <marker date="1523151265000" expanded="true" signature="2694:3835" ph="..." />
+                    <marker date="1523151265000" expanded="true" signature="2943:3236" ph="..." />
+                    <marker date="1523151265000" expanded="true" signature="3037:3085" ph="..." />
+                    <marker date="1523151265000" expanded="true" signature="3671:3810" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -111,8 +107,8 @@
           <file leaf-file-name="google_api_util.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/util/google_api_util.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+                <state relative-caret-position="384">
+                  <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -177,6 +173,7 @@
       <find>geometry</find>
       <find>markers</find>
       <find>setMap</find>
+      <find>origin</find>
     </findStrings>
   </component>
   <component name="GeneratorOptions">
@@ -237,8 +234,8 @@
         <option value="$PROJECT_DIR$/app/controllers/api/routes_controller.rb" />
         <option value="$PROJECT_DIR$/frontend/components/route/route_show.jsx" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/create_route.scss" />
-        <option value="$PROJECT_DIR$/frontend/components/route/create_route.jsx" />
         <option value="$PROJECT_DIR$/frontend/util/google_api_util.js" />
+        <option value="$PROJECT_DIR$/frontend/components/route/create_route.jsx" />
       </list>
     </option>
   </component>
@@ -464,12 +461,12 @@
       <workItem from="1522788288645" duration="3048000" />
       <workItem from="1522791496067" duration="72558000" />
       <workItem from="1523030359290" duration="28050000" />
-      <workItem from="1523126015783" duration="13828000" />
+      <workItem from="1523126015783" duration="15083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117704000" />
+    <option name="totallyTimeSpent" value="118959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -892,6 +889,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/create_route.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="95" column="22" lean-forward="false" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/route/route_show.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/routes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -908,41 +921,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/components/route/route_show.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/create_route.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="95" column="22" lean-forward="false" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/util/google_api_util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        <state relative-caret-position="384">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/components/route/create_route.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="576">
+          <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1523149688000" expanded="true" signature="2775:4054" ph="..." />
-            <marker date="1523149688000" expanded="true" signature="2834:3975" ph="..." />
-            <marker date="1523149688000" expanded="true" signature="3083:3376" ph="..." />
-            <marker date="1523149688000" expanded="true" signature="3177:3225" ph="..." />
-            <marker date="1523149688000" expanded="true" signature="3811:3950" ph="..." />
+            <marker date="1523151265000" expanded="true" signature="2635:3914" ph="..." />
+            <marker date="1523151265000" expanded="true" signature="2694:3835" ph="..." />
+            <marker date="1523151265000" expanded="true" signature="2943:3236" ph="..." />
+            <marker date="1523151265000" expanded="true" signature="3037:3085" ph="..." />
+            <marker date="1523151265000" expanded="true" signature="3671:3810" ph="..." />
           </folding>
         </state>
       </provider>

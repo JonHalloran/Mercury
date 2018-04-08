@@ -10,7 +10,6 @@ let request;
 let storedResponse;
 
 export const initMap = (center = {lat: 37.77949, lng: -122.4194}) => () => {
-
     directionsService = new google.maps.DirectionsService();
     directionsDisplay = new google.maps.DirectionsRenderer({
         draggable: true
@@ -49,6 +48,7 @@ export const initMap = (center = {lat: 37.77949, lng: -122.4194}) => () => {
 };
 
 function placeMarker(latLng, map) {
+    console.log('place marker', latLng)
     let marker = new google.maps.Marker({
         position: latLng,
         map: map
@@ -71,8 +71,8 @@ export const removeLastWaypoint = () => {
     if (locations.length > 1) {
         calcRoute()
     } else if (length === 1) {
-        console.log("else ifgoog")
-        placeMarker(locations[0].position, map)
+        console.log(locations)
+        placeMarker(locations[0].location, map)
         directionsDisplay.setMap(null)
     } else {
         clearFirstMarker();

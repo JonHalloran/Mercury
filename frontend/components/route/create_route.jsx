@@ -27,15 +27,15 @@ class CreateRoute extends React.Component {
 
 
     componentDidMount() {
-        window.initMap = initMap();
-        if (!mapExists()) {
-            const script = document.createElement("script");
-            script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
-            script.async = true;
-            document.body.appendChild(script);
-        } else {
-            initMap();
+        if (mapExists()) {
+            window.initMap()
+            return undefined;
         }
+        window.initMap = initMap();
+        const script = document.createElement("script");
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
+        script.async = true;
+        document.body.appendChild(script);
     }
 
     componentWillUnmount() {
@@ -68,13 +68,12 @@ class CreateRoute extends React.Component {
                 name: this.state.routeName,
                 description: `This is a ${distance} route that starts at ${start_location}`
             };
-        console.log(response.routes[0].legs[0].distance.text);
+        removeAllWaypoint();
         this.props.createRoute(newRoute).then(response => this.props.history.push(`/routes/${response.route.id}`));
     }
 
 
     render() {
-        console.log('details', this.state.showRouteDetails)
         let rootDetails;
 
         rootDetails = this.state.showRouteDetails ?
@@ -83,7 +82,6 @@ class CreateRoute extends React.Component {
                        onChange={(e) => this.handleChangeName(e)}/>
                 <button className={'route-name-button'}>SAVE ROUTE</button>
             </form> : '';
-        console.log('rootDetails', rootDetails)
         return (
             <div className={'create-route-page'}>
                 <aside className={'create-route-sidebar'}>
