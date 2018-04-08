@@ -61,7 +61,7 @@ class CreateRoute extends React.Component {
         let start_location = response.routes[0].legs[0].start_address;
         let
             newRoute = {
-                response: JSON.stringify(response.routes[0]),
+                response: JSON.stringify(response.routes[0].legs[0]),
                 request: JSON.stringify(response.request),
                 name: this.state.routeName,
                 description: `This is a ${distance} route that starts at ${start_location}`
