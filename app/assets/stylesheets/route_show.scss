@@ -1,0 +1,89 @@
+#map {
+  width: 618px;
+  height: 300px
+}
+
+.route-show {
+  display: flex;
+  justify-content: center;
+
+  .route-show-main {
+    width: 620px;
+    margin: 20px 10px;
+    .route-show {
+      display: flex;
+      justify-content: left;
+
+      h1 {
+        text-align: left;
+        padding-bottom: 10px;
+        color: #444444;
+        font-size: 30px;
+        font-family: "Open Sans", Sans-Serif;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+
+    .route-show-not-title {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #666;
+
+      .distance-info {
+        width: 110px;
+        margin-right: 20px;
+        padding: 10px 0;
+        background-image: linear-gradient(rgb(246, 244, 244) 0px, rgb(251, 249, 249) 100%);
+        border: 1px solid rgb(195, 194, 194);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .distance-label {
+          color: #999999;
+          font-size: 12px;
+
+        }
+
+        .distance-amount {
+          color: #434343;
+          font-size: 30px;
+        }
+      }
+
+      .route-details {
+        display: flex;
+        flex-direction: column;
+
+        * {
+          font-size: 14px;
+        }
+
+        li {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 15px;
+
+          .route-show-title {
+            width: 120px;
+            color: #666;
+            font-weight: 700;
+            padding-right: 5px;
+          }
+
+          .route-show-information {
+            width: 350px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .route-show-aside {
+    width: 300px;
+  }
+}
