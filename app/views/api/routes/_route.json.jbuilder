@@ -1,1 +1,1 @@
-json.extract! route, :id, :creator, :name, :response, :description
+json.extract! route, :id, :creator, :name, :response, :request, :description

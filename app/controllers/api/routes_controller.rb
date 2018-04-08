@@ -24,6 +24,6 @@ class Api::RoutesController < ApplicationController
   private
 
   def route_params
-    params.require(:route).permit(:description, :response, :name)
+    params.require(:route).permit(:description, :response, :name, :request)
   end
 end

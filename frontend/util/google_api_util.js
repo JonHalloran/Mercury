@@ -86,7 +86,7 @@ export const removeAllWaypoint = () => {
 };
 
 
-function calcRoute(request) {
+export const calcRoute = (request) => {
     let selectedMode = 'WALKING';
     request = request || {
         origin: locations[0].location,
