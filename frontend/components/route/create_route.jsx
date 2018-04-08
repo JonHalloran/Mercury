@@ -1,5 +1,12 @@
 import React from 'react'
-import {initMap, codeAddress, getRequest} from "../../util/google_api_util";
+import {
+    initMap,
+    codeAddress,
+    getResponse,
+    mapExists,
+    removeLastWaypoint,
+    removeAllWaypoint
+} from "../../util/google_api_util";
 
 
 class CreateRoute extends React.Component {
@@ -21,10 +28,18 @@ class CreateRoute extends React.Component {
 
     componentDidMount() {
         window.initMap = initMap();
-        const script = document.createElement("script");
-        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
-        script.async = true;
-        document.body.appendChild(script);
+        if (!mapExists()) {
+            const script = document.createElement("script");
+            script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
+            script.async = true;
+            document.body.appendChild(script);
+        } else {
+            initMap();
+        }
+    }
+
+    componentWillUnmount() {
+        mapExists();
     }
 
     handleCenterChange() {
@@ -44,14 +59,17 @@ class CreateRoute extends React.Component {
     }
 
     handleNewRoute() {
-        let request = getRequest();
-        let newRoute = {
-            request: JSON.stringify(request),
-            name: this.state.routeName,
-            description: "hello"
-        };
-        console.log(JSON.stringify(request));
-        this.props.createRoute(newRoute);
+        let response = getResponse();
+        let distance = response.routes[0].legs[0].distance.text
+        let start_location = response.routes[0].legs[0].start_address
+        let
+            newRoute = {
+                request: response.routes[0].overview_polyline,
+                name: this.state.routeName,
+                description: `This is a ${distance} route that starts at ${start_location}`
+            };
+        console.log(response.routes[0].legs[0].distance.text);
+        this.props.createRoute(newRoute).then(response => this.props.history.push(`/routes/${response.route.id}`));
     }
 
 
@@ -77,6 +95,11 @@ class CreateRoute extends React.Component {
                             <button className={'change-center-button'}>Search</button>
                         </div>
                     </form>
+                    <div className={'map-interaction-buttons'}>
+                        <button className={'remove-last-location'} onClick={() => removeLastWaypoint()}>Remove Last
+                        </button>
+                        <button className={'clear-map'} onClick={() => removeAllWaypoint()}>Clear</button>
+                    </div>
                     <div className={'route-details-root'}><span onClick={() => this.handleToggleRouteDetails()}>Route Details</span>
                         {rootDetails}
                     </div>

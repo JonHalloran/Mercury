@@ -7,6 +7,7 @@ import HeaderContainer from './header/header_container'
 import Shortcuts from './shortcuts/shortcuts'
 import Splash from './splash/splash'
 import CreateRouteContainer from './route/create_route_container'
+import RouteShowContainer from './route/route_show_container'
 
 export default () => (
     <div>
@@ -18,5 +19,6 @@ export default () => (
             <ProtectedRoute path='/' component={Shortcuts}/>
         </Switch>
         <ProtectedRoute path='/create_route' component={CreateRouteContainer}/>
+        <Route path={'/routes/:routeId'} component={RouteShowContainer}/>
     </div>
 )

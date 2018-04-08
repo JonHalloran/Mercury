@@ -5,7 +5,8 @@ class Api::RoutesController < ApplicationController
   end
 
   def show
-    @route = Route.find(params[routeId])
+    p params
+    @route = Route.find(params[:id])
   end
 
 
