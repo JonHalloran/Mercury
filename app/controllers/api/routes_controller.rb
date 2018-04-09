@@ -3,7 +3,11 @@ class Api::RoutesController < ApplicationController
   def index
 
 
-    @routes = Route.all.where("name LIKE '%#{params[:name]}%'").where("distance #{params[:dist_type]} #{params[:distance]}")
+    @routes = Route.all.where("name LIKE '%#{params[:name]}%'")
+    if (params[:dist_type] != 'dist_type')
+      @routes = @routes.where("distance #{params[:dist_type]} #{params[:distance]}")
+    end
+    @routes = @routes.limit(10)
     p @routes
   end
 

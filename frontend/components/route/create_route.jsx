@@ -6,7 +6,7 @@ import {
     mapExists,
     removeLastWaypoint,
     removeAllWaypoint,
-    staticImage
+    staticThumbImage
 } from "../../util/google_api_util";
 
 

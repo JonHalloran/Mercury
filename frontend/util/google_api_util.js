@@ -8,6 +8,7 @@ let geocoder;
 let map;
 let request;
 let storedResponse;
+let clickListener;
 
 export const initMap = (center = {lat: 37.77949, lng: -122.4194}) => (routeIn) => {
     directionsService = new google.maps.DirectionsService();
@@ -42,7 +43,7 @@ export const initMap = (center = {lat: 37.77949, lng: -122.4194}) => (routeIn) =
     if (routeIn !== undefined) {
         calcRoute(routeIn)
     } else {
-        map.addListener('click', (e) => {
+        clickListener = map.addListener('click', (e) => {
             addWaypoint(e.latLng);
             if (locations.length > 1) {
                 clearFirstMarker();
@@ -136,9 +137,17 @@ export const mapExists = () => {
     return map !== undefined;
 };
 
-export const staticImage = (polyline) => (
+export const removeClicks = () => {
+    console.log(clickListener)
+    google.maps.event.removeListener(clickListener)
+    directionsDisplay.directionsDisplay = new google.maps.DirectionsRenderer({
+        draggable: true
+    });
+}
+
+export const staticThumbImage = (polyline) => (
     $.ajax({
         url: `https://maps.googleapis.com/maps/api/staticmap?size=600x400&path=enc%3A${polyline}&key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0`,
         method: 'GET'
     })
-)
+);

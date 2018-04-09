@@ -2,6 +2,11 @@
   margin-top: 20px;
   margin: auto;
   max-width: 880px;
+
+  .route-index-map {
+    width: 100%;
+    padding-bottom: 10px;
+  }
   .route-index-list {
     max-width: 880px;
   }
@@ -16,9 +21,25 @@
       flex: 1;
       border-right: 1px solid rgb(230, 230, 229);
     }
+    .route-index-route {
+      display: block
+
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     *:last-child {
       border-right: none;
+    }
+    img {
+      height: 75px;
+      width: 75px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
 
     span {

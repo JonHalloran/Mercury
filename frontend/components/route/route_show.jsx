@@ -1,5 +1,5 @@
 import React from "react"
-import {calcRoute, initMap, mapExists} from "../../util/google_api_util";
+import {calcRoute, initMap, mapExists, removeClicks} from "../../util/google_api_util";
 
 class RouteShow extends React.Component {
 
@@ -12,6 +12,7 @@ class RouteShow extends React.Component {
             .then(response => setTimeout(() => calcRoute(JSON.parse(response.route.request)), 1000));
         if (mapExists()) {
             window.initMap();
+            removeClicks();
             return undefined;
         }
         console.log('Check in route show');
