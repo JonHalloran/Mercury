@@ -1,6 +1,6 @@
 export const getRoutes = (routeHash) => (
     $.ajax({
-        url: `api/routes/?name=${routeHash.name}&distance=${routeHash.distance}&dist_type=${routeHash.dist_type}`,
+        url: `api/routes/?my=${routeHash.my}&name=${routeHash.name}&distance=${routeHash.distance}&dist_type=${routeHash.dist_type}`,
         method: "GET"
     })
 );

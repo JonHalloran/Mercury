@@ -14,6 +14,8 @@ class User < ApplicationRecord
            class_name: :Route,
            foreign_key: :user_id
 
+  has_many :runsO
+
   def self.find_user_by_credentials(email, password)
     user = User.find_by(email: email)
     return user if user && BCrypt::Password.new(user.password_digest).is_password?(password)

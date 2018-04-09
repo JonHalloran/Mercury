@@ -10,6 +10,7 @@ import CreateRouteContainer from './route/create_route_container'
 import RouteShowContainer from './route/route_show_container'
 import RouteSearchContainer from './route/route_search_container'
 import RouteIndexContainer from './route/route_index_container'
+import MyRouteContainer from './route/my_routes_container'
 
 export default () => (
     <div>
@@ -24,5 +25,6 @@ export default () => (
         <Route path={'/routes/:routeId'} component={RouteShowContainer}/>
         <Route path={'/search_routes/'} component={RouteSearchContainer}/>
         <Route path={'/search_routes/'} component={RouteIndexContainer}/>
+        <ProtectedRoute path={'/my_routes/'} component={MyRouteContainer}/>
     </div>
 )
