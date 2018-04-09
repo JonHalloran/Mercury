@@ -95,7 +95,7 @@ class CreateRoute extends React.Component {
                     <form className={'change-center'} onSubmit={() => this.handleCenterChange()}>
                         <p className={'choose-size'}> Choose map location</p>
                         <div className={'choose-center-zip-and-button'}>
-                            <input className={'zipcode'} type={'text'} placeholder={'94101'}
+                            <input className={'zipcode'} type={'text'} placeholder={'Zipcode or City'}
                                    onChange={(e) => this.handlChangeZipcode(e)}/>
                             <button className={'change-center-button'}>Search</button>
                         </div>

@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
     retrieveRoutes: (routeHash) => dispatch(retrieveRoutes(routeHash))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RouteSearch)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RouteSearch))

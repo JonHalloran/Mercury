@@ -56,6 +56,7 @@
     box-sizing: border-box;
     height: 30px;
     padding: 10px;
+    margin-top: 10px;
     color: rgb(153, 153, 153);
   }
 
@@ -95,4 +96,8 @@
   .clear-map {
     margin-left: 10px;
   }
+}
+
+.create-route-page {
+  margin-top: 10px;
 }

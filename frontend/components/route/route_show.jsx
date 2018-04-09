@@ -8,13 +8,18 @@ class RouteShow extends React.Component {
     }
 
     componentDidMount() {
+        this.props.retrieveRoute(this.props.match.params.routeId)
+            .then(response => setTimeout(() => calcRoute(JSON.parse(response.route.request)), 1000));
+        if (mapExists()) {
+            window.initMap();
+            return undefined;
+        }
+        console.log('Check in route show');
         window.initMap = initMap();
-        let script = document.createElement("script");
+        const script = document.createElement("script");
         script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
         script.async = true;
         document.body.appendChild(script);
-        this.props.retrieveRoute(this.props.match.params.routeId)
-            .then(response => setTimeout(() => calcRoute(JSON.parse(response.route.request)), 1000));
 
     }
 

@@ -24,6 +24,7 @@ time, mark, audio, video {
     vertical-align: baseline;
     text-decoration: none;
     font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    outline: none;
 }
 
 /* HTML5 display-role reset for older browsers */

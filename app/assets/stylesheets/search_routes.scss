@@ -1,0 +1,119 @@
+.route-search {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  justify-content: center;
+  margin: auto;
+
+  .route-search-head {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    * {
+      margin: 5px 0;
+    }
+
+    .route-search-title {
+      font-size: 30px;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-right: 150px;
+    }
+
+    button {
+      background-color: #ebebeb;
+      border-radius: 2px;
+      padding: 12px 15px;
+      color: grey;
+      height: 44px;
+      flex: 1;
+      min-width: 130px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: rgb(209, 209, 209);
+    }
+  }
+  .route-search-form {
+    display: flex;
+    flex-direction: column;
+    * {
+      margin-bottom: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      margin-right: 10px;
+
+      * {
+        margin: 0;
+      }
+
+      span {
+        text-align: left;
+        line-height: 44px;
+        top: 0px;
+        margin-right: 10px;
+      }
+
+      input {
+        max-width: 858px;
+        padding-right: 10px;
+      }
+
+    }
+    .route-search-dist-div {
+      flex-direction: row;
+      margin-right: 0;
+      .route-search-dist-type {
+        margin-right: 10px;
+      }
+
+      * {
+        flex: 1;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
+
+    input {
+      margin-bottom: 15px;
+      min-height: 44px;
+      padding-left: 10px;
+      border: 1px solid #dde;
+      height: 44px;
+    }
+
+    select {
+      padding: 10px 0px 10px 10px;
+      height: 46px;
+      border-radius: 0px;
+      -webkit-appearance: none;
+      background-color: white;
+      margin-bottom: 15px;
+      font-size: 14px;
+      border: 1px solid #dde;
+      flex: 1;
+
+      option {
+        color: #777;
+        font-weight: 400;
+      }
+    }
+    button {
+      background-color: #08c;
+    }
+    input:focus {
+    }
+  }
+}

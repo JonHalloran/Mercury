@@ -1,0 +1,43 @@
+.route-index {
+  margin-top: 20px;
+  margin: auto;
+  max-width: 880px;
+  .route-index-list {
+    max-width: 880px;
+  }
+  .route-index-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-right: 1px solid rgb(230, 230, 229);
+    border-left: 1px solid rgb(230, 230, 229);
+    border-top: 1px solid rgb(230, 230, 229);
+    * {
+      flex: 1;
+      border-right: 1px solid rgb(230, 230, 229);
+    }
+
+    *:last-child {
+      border-right: none;
+    }
+
+    span {
+      text-align: center;
+    }
+  }
+  li {
+    border-right: 1px solid rgb(230, 230, 229);
+    border-bottom: 1px solid rgb(230, 230, 229);
+    cursor: pointer;
+  }
+  li:last-child {
+    border-bottom: 1px solid rgb(230, 230, 229);
+  }
+
+  li:nth-child(odd) {
+    * {
+      background-color: #f9f9f9;
+    }
+
+  }
+}
