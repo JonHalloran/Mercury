@@ -10,12 +10,10 @@ let request;
 let storedResponse;
 
 export const initMap = (center = {lat: 37.77949, lng: -122.4194}) => (routeIn) => {
-    console.log('initMap', routeIn)
     directionsService = new google.maps.DirectionsService();
     directionsDisplay = new google.maps.DirectionsRenderer({
         draggable: true
     });
-    console.log(directionsDisplay)
 
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
@@ -53,12 +51,9 @@ export const initMap = (center = {lat: 37.77949, lng: -122.4194}) => (routeIn) =
         });
     }
 
-    console.log('end of initMap')
-
 };
 
 function placeMarker(latLng, map) {
-    console.log('place marker', latLng)
     let marker = new google.maps.Marker({
         position: latLng,
         map: map
@@ -81,7 +76,6 @@ export const removeLastWaypoint = () => {
     if (locations.length > 1) {
         calcRoute()
     } else if (length === 1) {
-        console.log(locations);
         placeMarker(locations[0].location, map);
         directionsDisplay.setMap(null)
     } else {
@@ -90,14 +84,12 @@ export const removeLastWaypoint = () => {
 };
 
 export const removeAllWaypoint = () => {
-    console.log('removeall');
     locations = [];
     directionsDisplay.setMap(null)
 };
 
 
 export const calcRoute = (request) => {
-    console.log('calcRoute')
     let selectedMode = 'WALKING';
     request = request || {
         origin: locations[0].location,
@@ -105,7 +97,6 @@ export const calcRoute = (request) => {
         waypoints: locations.slice(1, -1),
         travelMode: google.maps.TravelMode[selectedMode]
     };
-    console.log(directionsService)
     directionsService.route(request, function (response, status) {
         if (status == 'OK') {
             storedResponse = response;
@@ -133,9 +124,20 @@ export const codeAddress = (zipCode) => {
 };
 
 export const getResponse = () => {
-    return storedResponse;
+    return {
+        response: storedResponse,
+        waypointLat: locations[0].location.lat(),
+        waypointLng: locations[0].location.lng()
+    }
 };
 
 export const mapExists = () => {
     return map !== undefined;
 };
+
+export const staticImage = (polyline) => (
+    $.ajax({
+        url: `https://maps.googleapis.com/maps/api/staticmap?size=600x400&path=enc%3A${polyline}&key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0`,
+        method: 'GET'
+    })
+)

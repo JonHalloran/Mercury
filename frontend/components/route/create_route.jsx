@@ -5,7 +5,8 @@ import {
     getResponse,
     mapExists,
     removeLastWaypoint,
-    removeAllWaypoint
+    removeAllWaypoint,
+    staticImage
 } from "../../util/google_api_util";
 
 
@@ -56,15 +57,23 @@ class CreateRoute extends React.Component {
     }
 
     handleNewRoute() {
-        let response = getResponse();
-        let distance = response.routes[0].legs[0].distance.text;
-        let start_location = response.routes[0].legs[0].start_address;
+        let response_object = getResponse();
+        let response_0 = response_object.response.routes[0];
+        let distance = response_0.legs[0].distance.text;
+        let start_location = response_0.legs[0].start_address;
+        let polyline = response_0.overview_polyline;
+        let split_origin = start_location.split(', ');
+        let origin = split_origin[1] + ", " + split_origin[2].slice(0, 2);
         let
             newRoute = {
-                response: JSON.stringify(response.routes[0].legs[0]),
-                request: JSON.stringify(response.request),
+                request: JSON.stringify(response_object.response.request),
                 name: this.state.routeName,
-                description: `This is a ${distance} route that starts at ${start_location}`
+                description: `This is a ${distance} route that starts at ${start_location}`,
+                lat: response_object.waypointLat,
+                log: response_object.waypointLng,
+                origin: origin,
+                img_url: polyline,
+                distance: distance
             };
         removeAllWaypoint();
         this.props.createRoute(newRoute).then(response => this.props.history.push(`/routes/${response.route.id}`));

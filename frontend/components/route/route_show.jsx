@@ -9,8 +9,6 @@ class RouteShow extends React.Component {
 
     componentDidMount() {
         window.initMap = initMap();
-        console.log("here");
-        console.log($('script[src*="load.js"]'))
         let script = document.createElement("script");
         script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
         script.async = true;
@@ -18,7 +16,6 @@ class RouteShow extends React.Component {
         this.props.retrieveRoute(this.props.match.params.routeId)
             .then(response => setTimeout(() => calcRoute(JSON.parse(response.route.request)), 1000));
 
-        console.log('end of did mount')
     }
 
     componentWillReceiveProps(newProps) {
@@ -36,13 +33,10 @@ class RouteShow extends React.Component {
         let description = 'description';
 
         if (route) {
-            let response = route.response;
             name = route.name;
-            let parsed = JSON.parse(response);
-            distance = parsed.distance.text.split(' ');
-            let origin_split = parsed.start_address.split(', ');
+            distance = route.distance;
             description = route.description;
-            origin = origin_split[1] + ', ' + origin_split[2].slice(0, 2);
+            origin = route.origin;
             creator_name = route.creator.first_name + ' ' + route.creator.last_name
         }
         return (
@@ -54,7 +48,7 @@ class RouteShow extends React.Component {
                     <div className={'route-show-not-title'}>
                         <div className={'distance-info'}>
                             <h4 className={'distance-label'}>DISTANCE</h4>
-                            <h2 className={'distance-amount'}>{distance[0]}</h2>
+                            <h2 className={'distance-amount'}>{distance}</h2>
                             <h4 className={'distance-label'}>miles</h4>
                         </div>
                         <ul className={'route-details'}>

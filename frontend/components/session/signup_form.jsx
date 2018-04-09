@@ -45,7 +45,6 @@ class SignUp extends React.Component {
         if (this.props.sess_errors.responseJSON) {
             errors = this.props.sess_errors.responseJSON
         }
-        console.log('errors2', errors)
         return (
             <div className={'whole-page'}>
                 <div className={'session-form-container session-form'}>

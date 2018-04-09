@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408030950) do
+ActiveRecord::Schema.define(version: 20180409000921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,16 @@ ActiveRecord::Schema.define(version: 20180408030950) do
     t.integer "user_id", null: false
     t.string "name", null: false
     t.text "description", null: false
-    t.text "response", null: false
+    t.text "img_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "request"
-    t.index ["response"], name: "index_routes_on_response"
+    t.float "lat"
+    t.float "log"
+    t.float "elevation"
+    t.float "distance"
+    t.string "origin"
+    t.index ["img_url"], name: "index_routes_on_img_url"
     t.index ["user_id"], name: "index_routes_on_user_id"
   end
 

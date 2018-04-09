@@ -86,11 +86,36 @@
   .route-show-aside {
     min-width: 300px;
 
-    .route-show-aside-butons {
+    .route-show-aside-buttons {
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
       padding: 20px;
       border: 1px solid #ddd;
+
+      button {
+        border-radius: 5px;
+        height: 29px;
+        padding: 5.5px 0;
+      }
+
+      .route-show-create-route-button {
+        background-image: linear-gradient(rgb(182, 182, 182) 5%, rgb(169, 166, 166) 100%);
+      }
+
+      .route-show-create-route-button:hover {
+        background-image: linear-gradient(rgb(135, 133, 133) 5%, rgb(94, 94, 94) 100%);
+      }
+
+      .route-show-log-workout {
+        margin-top: 15px;
+        background: linear-gradient(to bottom, #ff9628 5%, #ff8714 100%);
+      }
+
+      .route-show-log-workout:hover {
+        background: linear-gradient(to bottom, #f08a15 5%, #e56e06 100%);
+      }
+
     }
   }
 }
