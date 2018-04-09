@@ -1,15 +1,10 @@
 class Api::RoutesController < ApplicationController
 
   def index
-    searchHash = route_search_params
-    if searchHash[my] == true
-      @routes = current_user.routes
-      render :index
-    else
-      @routes = Route.all
-      render :index
-    end
 
+
+    @routes = Route.all.where("name LIKE '%#{params[:name]}%'").where("distance #{params[:dist_type]} #{params[:distance]}")
+    p @routes
   end
 
   def show
@@ -35,8 +30,5 @@ class Api::RoutesController < ApplicationController
     params.require(:route).permit(:description, :name, :request, :lat, :log, :elevation, :origin, :img_url, :distance)
   end
 
-  def route_search_params
-    params.require(:route).permit(:distance, :name, :location, :my, :distance_type)
-  end
 
 end

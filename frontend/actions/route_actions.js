@@ -23,8 +23,8 @@ export const receiveRouteErrors = errors => ({
 export const createRoute = routeForm => dispatch =>
     routeAPIUtil.createRoute(routeForm).then(route => dispatch(receiveRoute(route)))
 
-export const retrieveRoutes = () => dispatch =>
-    routeAPIUtil.getRoutes().then(routes => dispatch(receiveRoutes(routes)), errors => dispatch(receiveRouteErrors(errors)))
+export const retrieveRoutes = (routeHash) => dispatch =>
+    routeAPIUtil.getRoutes(routeHash).then(routes => dispatch(receiveRoutes(routes)), errors => dispatch(receiveRouteErrors(errors)))
 
 export const retrieveRoute = routeId => dispatch =>
     routeAPIUtil.getRoute(routeId).then(route => dispatch(receiveRoute(route)), errors => dispatch(receiveRouteErrors(errors)))

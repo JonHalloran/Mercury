@@ -8,6 +8,8 @@ import Shortcuts from './shortcuts/shortcuts'
 import Splash from './splash/splash'
 import CreateRouteContainer from './route/create_route_container'
 import RouteShowContainer from './route/route_show_container'
+import RouteSearchContainer from './route/route_search_container'
+import RouteIndexContainer from './route/route_index_container'
 
 export default () => (
     <div>
@@ -20,5 +22,7 @@ export default () => (
         </Switch>
         <ProtectedRoute path='/create_route' component={CreateRouteContainer}/>
         <Route path={'/routes/:routeId'} component={RouteShowContainer}/>
+        <Route path={'/search_routes/'} component={RouteSearchContainer}/>
+        <Route path={'/search_routes/'} component={RouteIndexContainer}/>
     </div>
 )
