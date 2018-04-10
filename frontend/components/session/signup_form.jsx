@@ -18,6 +18,7 @@ class SignUp extends React.Component {
 
         this.update = this.update.bind(this)
         this.submitForm = this.submitForm.bind(this)
+        this.loginDemo = this.loginDemo.bind(this)
     }
 
     update(field) {
@@ -36,6 +37,10 @@ class SignUp extends React.Component {
         this.props.clearErrors()
     }
 
+    loginDemo(e) {
+      e.preventDefault()
+      this.props.login(this.props.login({user: {email: 'email', password: 'password'}}))
+    }
 
     render() {
         const days = range(2, 31)
@@ -48,12 +53,9 @@ class SignUp extends React.Component {
         return (
             <div className={'whole-page'}>
                 <div className={'session-form-container session-form'}>
+                <Link to={'/login/'} className={'login-link-to-signup'}><span>LOG IN</span></Link>
                     <form className={'signup-form'} onSubmit={this.submitForm}>
-                        <Link to={'/login/'} className={'login-link-to-signup'}><span>LOG IN</span></Link>
-                        <button className={'demo-user'}
-                                onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
-                            USER
-                        </button>
+                      <button className={'demo-user'} onClick={this.loginDemo}>DEMO USER</button>
                         <div className={'session-errors'}>
                             {errors.map((error) => <p className={'session-error'}>{error}</p>)}
                         </div>
@@ -82,7 +84,7 @@ class SignUp extends React.Component {
                         </div>
                         <input type='password' value={this.state.password} placeholder={'Password'}
                                onChange={this.update('password')}/>
-                        <button>Login</button>
+                        <button>Sign Up</button>
                     </form>
                 </div>
             </div>

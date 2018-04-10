@@ -1,6 +1,8 @@
 #map {
-  width: 618px;
-  height: 300px
+  width: 900px;
+  height: 450px;
+  padding-top: 10px;
+  border-top: 1px solid #666;
 }
 
 .route-show {
@@ -8,8 +10,9 @@
   justify-content: center;
 
   .route-show-main {
-    width: 620px;
+    width: 600px;
     margin: 20px 10px;
+    margin-right: 0px;
     .route-show {
       display: flex;
       justify-content: left;
@@ -29,13 +32,14 @@
       display: flex;
       flex-direction: row;
       padding-bottom: 20px;
-      border-bottom: 1px solid #666;
-
       .distance-info {
         width: 110px;
         margin-right: 20px;
         padding: 10px 0;
-        background-image: linear-gradient(rgb(246, 244, 244) 0px, rgb(251, 249, 249) 100%);
+        background-image: linear-gradient(
+          rgb(246, 244, 244) 0px,
+          rgb(251, 249, 249) 100%
+        );
         border: 1px solid rgb(195, 194, 194);
         display: flex;
         flex-direction: column;
@@ -45,7 +49,6 @@
         .distance-label {
           color: #999999;
           font-size: 12px;
-
         }
 
         .distance-amount {
@@ -79,7 +82,6 @@
           }
         }
       }
-
     }
   }
 
@@ -87,7 +89,7 @@
     min-width: 300px;
 
     .route-show-aside-buttons {
-      margin-top: 20px;
+      margin-top: 40px;
       display: flex;
       flex-direction: column;
       padding: 20px;
@@ -100,11 +102,17 @@
       }
 
       .route-show-create-route-button {
-        background-image: linear-gradient(rgb(182, 182, 182) 5%, rgb(169, 166, 166) 100%);
+        background-image: linear-gradient(
+          rgb(182, 182, 182) 5%,
+          rgb(169, 166, 166) 100%
+        );
       }
 
       .route-show-create-route-button:hover {
-        background-image: linear-gradient(rgb(135, 133, 133) 5%, rgb(94, 94, 94) 100%);
+        background-image: linear-gradient(
+          rgb(135, 133, 133) 5%,
+          rgb(94, 94, 94) 100%
+        );
       }
 
       .route-show-log-workout {
@@ -115,7 +123,6 @@
       .route-show-log-workout:hover {
         background: linear-gradient(to bottom, #f08a15 5%, #e56e06 100%);
       }
-
     }
   }
 }

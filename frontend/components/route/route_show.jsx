@@ -6,29 +6,32 @@ class RouteShow extends React.Component {
 
     constructor(props) {
         super(props)
+
+        this.state = {
+          modal: false,
+        }
+
+        this.toggleModal = this.toggleModal.bind(this)
     }
 
     componentDidMount() {
         this.props.retrieveRoute(this.props.match.params.routeId)
             .then(response => setTimeout(() => calcRoute(JSON.parse(response.route.request)), 1000));
-        if (mapExists()) {
-            window.initMap();
-            removeClicks();
-            return undefined;
-        }
-        console.log('Check in route show');
-        window.initMap = initMap();
-        const script = document.createElement("script");
-        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
-        script.async = true;
-        document.body.appendChild(script);
 
+        window.initMap = initMap({draggable: false, clickable: false});
     }
 
     componentWillReceiveProps(newProps) {
         if (this.props.match.params.routeId !== newProps.match.params.routeId) {
             this.props.retrieveRoute(newProps.match.params.routeId).then(response => calcRoute(JSON.parse(response.route.request)))
         }
+    }
+
+    toggleModal () {
+      this.setState({
+        modal: !this.state.modal
+      })
+
     }
 
     render() {
@@ -46,7 +49,9 @@ class RouteShow extends React.Component {
             origin = route.origin;
             creator_name = route.creator.first_name + ' ' + route.creator.last_name
         }
+        let modal = this.state.modal ? <RunModalConatainer toggleModal={this.toggleModal} /> : ""
         return (
+
             <div className={'route-show'}>
                 <main className={'route-show-main'}>
                     <div className={"route-show"}>
@@ -81,12 +86,12 @@ class RouteShow extends React.Component {
                                 onClick={() => this.props.history.push('/create_route/')}> Create Route
                         </button>
                         <button className={'route-show-log-workout'}
-                                onClick={() => this.props.history.push(`/routes/${route.routeId}/log_workout/`)}>Log
+                                onClick={this.toggleModal}>Log
                             Workout
                         </button>
                     </div>
                 </aside>
-                <RunModalConatainer/>
+                {modal}
             </div>
         )
     }

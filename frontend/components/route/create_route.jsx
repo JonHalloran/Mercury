@@ -28,15 +28,8 @@ class CreateRoute extends React.Component {
 
 
     componentDidMount() {
-        if (mapExists()) {
-            window.initMap()
-            return undefined;
-        }
-        window.initMap = initMap();
-        const script = document.createElement("script");
-        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0&callback=initMap";
-        script.async = true;
-        document.body.appendChild(script);
+      console.log('did mount');
+      initMap({draggable: true, clickable:true});
     }
 
 
@@ -101,9 +94,9 @@ class CreateRoute extends React.Component {
                         </div>
                     </form>
                     <div className={'map-interaction-buttons'}>
-                        <button className={'remove-last-location'} onClick={() => removeLastWaypoint()}>Remove Last
+                        <button className={'remove-last-location'} onClick={() => removeLastWaypoint()}>&#8627; Remove Last
                         </button>
-                        <button className={'clear-map'} onClick={() => removeAllWaypoint()}>Clear</button>
+                        <button className={'clear-map'} onClick={() => removeAllWaypoint()}>&#10006; Clear</button>
                     </div>
                     <div className={'route-details-root'}><span onClick={() => this.handleToggleRouteDetails()}>Route Details</span>
                         {rootDetails}

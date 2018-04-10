@@ -14,6 +14,10 @@ class LoginForm extends React.Component {
         this.submitForm = this.submitForm.bind(this)
     }
 
+    componentDidMount() {
+      this.props.clearErrors()
+    }
+
     update(field) {
         return (e) => {
             this.setState({[field]: e.target.value})
@@ -39,7 +43,7 @@ class LoginForm extends React.Component {
                             onClick={() => this.props.login({user: {email: 'email', password: 'password'}})}>DEMO
                         USER
                     </button>
-                    <div>
+                    <div className={'session-errors'}>
                         {errors.map((error) => <p className={'session-error'}>{error}</p>)}
                     </div>
                     <form className='login-form' onSubmit={this.submitForm}>
