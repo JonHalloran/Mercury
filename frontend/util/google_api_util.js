@@ -137,8 +137,8 @@ export const mapExists = () => {
 export const removeClicks = () => {
   console.log(clickListener);
   google.maps.event.removeListener(clickListener);
-  directionsDisplay.directionsDisplay = new google.maps.DirectionsRenderer({
-    draggable: true
+  directionsDisplay = new google.maps.DirectionsRenderer({
+    draggable: false
   });
 };
 

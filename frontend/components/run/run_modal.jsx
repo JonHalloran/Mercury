@@ -57,16 +57,22 @@ class RunModal extends React.Component {
                                    type={'number'}
                                    placeholder={'hh'}
                                    onChange={this.handleChange('hours')} />
+                            <p> : </p>
                             <input className={'run-log-modal-time-minutes'}
                                    value={this.state.minutes}
                                    type={'number'}
                                    placeholder={'mm'}
                                    onChange={this.handleChangeMinSec('minutes')} />
+                            <p> : </p>
                             <input className={'run-log-modal-time-seconds'}
                                    value={this.state.seconds}
                                    type={'number'}
                                    placeholder={'hh'}
                                    onChange={this.handleChangeMinSec('seconds')} />
+                          </div>
+                          <div className={'run-modal-buttons'}>
+                            <button className={'save-run-button'}>save</button>
+
                           </div>
                         </label>
                     </form>
