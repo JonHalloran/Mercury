@@ -1,5 +1,6 @@
 import React from "react"
 import {calcRoute, initMap, mapExists, removeClicks} from "../../util/google_api_util";
+import RunModalConatainer from '../run/run_modal_container'
 
 class RouteShow extends React.Component {
 
@@ -85,7 +86,7 @@ class RouteShow extends React.Component {
                         </button>
                     </div>
                 </aside>
-
+                <RunModalConatainer/>
             </div>
         )
     }

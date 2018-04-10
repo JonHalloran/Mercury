@@ -9,11 +9,12 @@ class RouteIndex extends React.Component {
     }
 
     calculateIndexMap() {
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         let source = "https://maps.googleapis.com/maps/api/staticmap?size=640x350&maptype=roadmap"
         this.props.routes.forEach((route, ind) => {
                 let parsed = JSON.parse(route.request).origin.location;
                 console.log(parsed)
-                source += `&markers=color:blue%7Clabel:${ind + 1}%7C${parsed.lat},${parsed.lng}`
+                source += `&markers=color:blue%7Clabel:${alphabet[ind]}%7C${parsed.lat},${parsed.lng}`
             }
         )
         source += '&key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0'
@@ -23,6 +24,7 @@ class RouteIndex extends React.Component {
     render() {
         if (this.props.routes.length === 0) return (null);
         let source = this.calculateIndexMap()
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         return (
             <div className={'route-index'}>
                 <img src={source} className={'route-index-map'}/>
@@ -38,7 +40,7 @@ class RouteIndex extends React.Component {
                     </li>
                     {this.props.routes.map((route, ind) => <RouteIndexItem key={route.id} route={route}
                                                                            history={this.props.history}
-                                                                           ind={ind + 1}/>)}
+                                                                           ind={alphabet[ind]}/>)}
                 </ul>
             </div>
         )

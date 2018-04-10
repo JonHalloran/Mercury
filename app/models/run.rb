@@ -1,5 +1,5 @@
 class Run < ApplicationRecord
-  validates :user, :route, :duration, presence: true
+  validates :user, :route, :duration, :date, presence: true
 
   belongs_to :user
   belongs_to :route

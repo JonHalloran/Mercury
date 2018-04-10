@@ -14,7 +14,7 @@ class User < ApplicationRecord
            class_name: :Route,
            foreign_key: :user_id
 
-  has_many :runsO
+  has_many :runs
 
   def self.find_user_by_credentials(email, password)
     user = User.find_by(email: email)

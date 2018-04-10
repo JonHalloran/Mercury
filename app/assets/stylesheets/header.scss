@@ -109,6 +109,50 @@
         display: block;
       }
     }
+
+    .logo-and-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      * {
+
+      }
+      .main-nav-links {
+        display: flex;
+        flex-direction: row;
+
+      }
+      .main-nav-link {
+        font-size: 14px;
+        text-transform: uppercase;
+        padding-top: 8px;
+        margin-left: 20px;
+
+        .dropdown-root {
+          p {
+            font-size: 14px;
+            text-transform: uppercase;
+            padding-top: 8px;
+            margin-left: 10px;
+          }
+        }
+      }
+
+    }
   }
 
+}
+
+.dropdown-root {
+  p {
+    color: #9297a3;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 8px;
+    margin-left: 20px;
+  }
+  * {
+    z-index: 1000;
+  }
 }
