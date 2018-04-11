@@ -5,6 +5,7 @@ class RunModal extends React.Component {
     super(props);
 
     this.state = {
+      name: "",
       hours: "",
       minutes: "",
       seconds: "",
@@ -62,6 +63,16 @@ class RunModal extends React.Component {
                 className={"run-log-modal-date"}
                 onChange={this.handleChange("date")}
                 value={this.state.date}
+              />
+            </label>
+            <label>
+              <span>Name:</span>
+              <input
+                type="text"
+                className={"run-log-modal-name"}
+                onChange={this.handleChange("name")}
+                placeholder={'Title'}
+                value={this.state.name}
               />
             </label>
             <label>

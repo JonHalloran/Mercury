@@ -19,7 +19,7 @@ class Api::RunsController < ApplicationController
   end
 
   def run_params
-    params.require(:run).permit(:duration, :route_id, :date)
+    params.require(:run).permit(:duration, :route_id, :date, :name)
   end
 
 end
