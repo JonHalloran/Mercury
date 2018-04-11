@@ -8,7 +8,8 @@ class RunShow extends React.Component {
     console.log(props)
     this.state = {
       run: this.props.run,
-      route: this.props.route
+      route: this.props.route,
+      user: this.props.user
     }
   }
 
@@ -22,6 +23,7 @@ class RunShow extends React.Component {
     this.setState({
       run: newProps.run,
       route: newProps.route,
+      user: newProps.user
     })
     if (this.props.match.params.routeId !== newProps.match.params.routeId) {
         this.props.retrieveRun(this.props.match.params.runId).then(response => calcRoute(JSON.parse(response.payload.route.request)))
@@ -52,10 +54,15 @@ class RunShow extends React.Component {
     let dist = 0;
     let duration = 0;
     let name = '';
+    let runner_name: '';
+    let date = '';
     if (this.state.run && this.state.route) {
+      debugger;
       dist = this.state.route.distance;
       name = this.state.run.name;
       duration = this.state.run.duration;
+      runner_name = this.state.user.first_name + ' ' + this.state.user.last_name
+      date = this.state.run.date
     }
     const time = this.convert(duration)
     const pace = this.convert(Math.round(duration/dist))
@@ -69,6 +76,14 @@ class RunShow extends React.Component {
           <h2>{name}</h2>
           <div className={'calculated-values'}>
             <div className={'run-show-page-value-pair'}>
+              <section className={'run-show-page-value-title'} >Run By</section>
+              <section className={'run-show-page-value-number'}>{runner_name}</section>
+            </div>
+            <div className={'run-show-page-value-pair'}>
+              <section className={'run-show-page-value-title'} >Run On</section>
+              <section className={'run-show-page-value-number'}>{date}</section>
+            </div>
+            <div className={'run-show-page-value-pair'}>
               <section className={'run-show-page-value-title'} >Distance</section>
               <section className={'run-show-page-value-number'}>{dist}
               <span className={'run-show-page-value-label'}>miles</span>
@@ -76,9 +91,7 @@ class RunShow extends React.Component {
             </div>
             <div className={'run-show-page-value-pair'}>
               <section className={'run-show-page-value-title'} >duration</section>
-              <section className={'run-show-page-value-number'}>{time}
-              <span className={'run-show-page-value-label'}></span>
-              </section>
+              <section className={'run-show-page-value-number'}>{time}</section>
             </div>
             <div className={'run-show-page-value-pair'}>
               <section className={'run-show-page-value-title'} >AVG Pace</section>

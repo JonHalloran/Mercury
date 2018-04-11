@@ -9,12 +9,14 @@ const mapStateToProps = (state, ownProps) => {
   if (run) {
     return {
       run: run,
-      route: state.entities.routes[run.route_id]
+      route: state.entities.routes[run.route_id],
+      user: state.entities.users[run.user_id]
     };
   }
   return {
     run: state.entities.runs[ownProps.match.params.runId],
-    route: undefined
+    route: undefined,
+    user: undefined
   };
 };
 
