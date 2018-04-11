@@ -1,10 +1,15 @@
-export const getRoutes = routeHash =>
-  $.ajax({
-    url: `api/routes/?my=${routeHash.my}&name=${routeHash.name}&distance=${
-      routeHash.distance
-    }&dist_type=${routeHash.dist_type}&origin=${routeHash.city}`,
+export const getRoutes = routeHash => {
+  let url = "api/routes/?&";
+  const keys = Object.keys(routeHash);
+  debugger;
+  keys.forEach(key => {
+    url += `&${key}=${routeHash[key]}`;
+  });
+  return $.ajax({
+    url: url,
     method: "GET"
   });
+};
 
 export const getRoute = routeId =>
   $.ajax({
