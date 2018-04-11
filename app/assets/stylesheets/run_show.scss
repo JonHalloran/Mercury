@@ -1,0 +1,13 @@
+.run-show-page {
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+
+  #map {
+    width: 580px;
+    height: 580px;
+    padding-top: 10px;
+    border-top: 1px solid #666;
+  }
+}

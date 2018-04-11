@@ -37,7 +37,8 @@ class RunModal extends React.Component {
       route_id: this.props.match.params.routeId,
       duration:
         this.state.hours * 3600 + this.state.minutes * 60 + this.state.seconds,
-      date: this.state.date
+      date: this.state.date,
+      name: this.state.name
     };
 
     this.props

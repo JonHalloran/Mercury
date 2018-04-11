@@ -1,13 +1,13 @@
-#map {
-  width: 900px;
-  height: 450px;
-  padding-top: 10px;
-  border-top: 1px solid #666;
-}
-
 .route-show {
   display: flex;
   justify-content: center;
+
+  #map {
+    width: 900px;
+    height: 450px;
+    padding-top: 10px;
+    border-top: 1px solid #666;
+  }
 
   .route-show-main {
     width: 600px;
