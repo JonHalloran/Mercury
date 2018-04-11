@@ -1,7 +1,6 @@
 export const getRoutes = routeHash => {
   let url = "api/routes/?&";
   const keys = Object.keys(routeHash);
-  debugger;
   keys.forEach(key => {
     url += `&${key}=${routeHash[key]}`;
   });
