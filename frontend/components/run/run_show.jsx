@@ -1,7 +1,7 @@
 import React from 'react'
 import {initMap, calcRoute} from "../../util/google_api_util";
-import CommentFormContainer from '/Users/jonathanhalloran/Desktop/mercury/frontend/components/comment/comment_form_container.js'
-
+import CommentFormContainer from '../comment/comment_form_container'
+import CommentIndexContainer from "../comment/comment_index_container"
 
 class RunShow extends React.Component {
   constructor(props){
@@ -102,6 +102,7 @@ class RunShow extends React.Component {
           </div>
           </div>
           <CommentFormContainer />
+          <CommentIndexContainer />
       </main>
     )
   }

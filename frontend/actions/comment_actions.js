@@ -20,9 +20,11 @@ const receiveCommentErrors = errors => ({
 });
 
 export const fetchComments = runId => dispatch =>
-  commentAPIUtil.fetchComments(runId).then(payload => receiveComments(payload));
+  commentAPIUtil
+    .fetchComments(runId)
+    .then(payload => dispatch(receiveComments(payload)));
 
 export const createComment = (runId, commentForm) => dispatch =>
   commentAPIUtil
     .createComment(runId, commentForm)
-    .then(payload => receiveComment(payload));
+    .then(payload => dispatch(receiveComment(payload)));

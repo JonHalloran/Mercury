@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def index
-    @comments = Comment.findby(run_id: params[:run_id]).includes(:user)
+    @comments = Comment.includes(:user).where(run_id: params[:run_id])
   end
 
   def create
