@@ -3,11 +3,46 @@
   display: flex;
   flex-direction: row;
   margin: auto;
+  margin-top: 10px;
 
   #map {
     width: 580px;
     height: 580px;
     padding-top: 10px;
-    border-top: 1px solid #666;
   }
+}
+
+.runs-show-page-info-box {
+  margin-left: 10px;
+  border: 1px solid #c3c2c2;
+  width: 280px;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #fcfcfc 100%);
+
+  * {
+    color: #606060;
+  }
+  h2 {
+    margin: 10px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.calculated-values {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.run-show-page-value-pair {
+  margin: 5px 10px;
+}
+.run-show-page-value-title {
+  margin-bottom: 2px;
+}
+
+.run-show-page-value-label {
+  text-transform: uppercase;
+  margin-left: 3px;
+  font-size: 12px;
 }
