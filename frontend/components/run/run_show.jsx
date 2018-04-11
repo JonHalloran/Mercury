@@ -1,5 +1,6 @@
 import React from 'react'
 import {initMap, calcRoute} from "../../util/google_api_util";
+import CommentFormContainer from '/Users/jonathanhalloran/Desktop/mercury/frontend/components/comment/comment_form_container.js'
 
 
 class RunShow extends React.Component {
@@ -57,7 +58,6 @@ class RunShow extends React.Component {
     let runner_name: '';
     let date = '';
     if (this.state.run && this.state.route) {
-      debugger;
       dist = this.state.route.distance;
       name = this.state.run.name;
       duration = this.state.run.duration;
@@ -101,6 +101,7 @@ class RunShow extends React.Component {
             </div>
           </div>
           </div>
+          <CommentFormContainer />
       </main>
     )
   }
