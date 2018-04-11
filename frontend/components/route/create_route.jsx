@@ -69,7 +69,7 @@ class CreateRoute extends React.Component {
                 distance: distance
             };
         removeAllWaypoint();
-        this.props.createRoute(newRoute).then(response => this.props.history.push(`/routes/${response.route.id}`));
+        this.props.createRoute(newRoute).then(response => this.props.history.push(`/routes/${response.payload.route.id}`));
     }
 
 

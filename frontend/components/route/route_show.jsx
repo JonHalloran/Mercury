@@ -15,15 +15,16 @@ class RouteShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.retrieveRoute(this.props.match.params.routeId)
-            .then(response => setTimeout(() => calcRoute(JSON.parse(response.route.request)), 1000));
+      window.initMap = initMap({draggable: false, clickable: false});
+      this.props.retrieveRoute(this.props.match.params.routeId)
+          .then(response => setTimeout(() => calcRoute(JSON.parse(response.payload.route.request)), 1000));
 
-        window.initMap = initMap({draggable: false, clickable: false});
     }
 
     componentWillReceiveProps(newProps) {
+      console.log(newProps);
         if (this.props.match.params.routeId !== newProps.match.params.routeId) {
-            this.props.retrieveRoute(newProps.match.params.routeId).then(response => calcRoute(JSON.parse(response.route.request)))
+            this.props.retrieveRoute(newProps.match.params.routeId).then(response => calcRoute(JSON.parse(response.payload.route.request)))
         }
     }
 
@@ -35,6 +36,7 @@ class RouteShow extends React.Component {
     }
 
     render() {
+      console.log('this props', this.props);
         let route = this.props.route;
         let distance = [0, 'miles'];
         let origin = 'Neverland';
@@ -42,12 +44,12 @@ class RouteShow extends React.Component {
         let name = 'name';
         let description = 'description';
 
-        if (route) {
+        if (route && this.props.creator) {
             name = route.name;
             distance = route.distance;
             description = route.description;
             origin = route.origin;
-            creator_name = route.creator.first_name + ' ' + route.creator.last_name
+            creator_name = this.props.creator.first_name + ' ' + this.props.creator.last_name
         }
         let modal = this.state.modal ? <RunModalConatainer toggleModal={this.toggleModal} /> : ""
         return (

@@ -41,7 +41,7 @@ class RunModal extends React.Component {
 
     this.props
       .createRun(runForm)
-      .then(run => this.props.history.push("/runs/run.id"));
+      .then(response => this.props.history.push(`/runs/${response.payload.run.id}`));
   }
 
   handleChangeSeconds(e) {}

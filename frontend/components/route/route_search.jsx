@@ -8,9 +8,9 @@ class RouteSearch extends React.Component {
             dist_type: 'dist_type',
             name: '',
             distance: '',
-            zipcode: '',
+            city: '',
         }
-        this.handleChangeZipcode = this.handleChangeZipcode.bind(this)
+        this.handleChangeCity = this.handleChangeCity.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChangeDistance = this.handleChangeDistance.bind(this)
         this.handleChangeName = this.handleChangeName.bind(this)
@@ -35,9 +35,9 @@ class RouteSearch extends React.Component {
         })
     }
 
-    handleChangeZipcode(e) {
+    handleChangeCity(e) {
         this.setState({
-            zipcode: e.target.value
+            city: e.target.value
         })
     }
 
@@ -76,9 +76,9 @@ class RouteSearch extends React.Component {
                                onChange={this.handleChangeDistance} value={this.state.distance}/>
                     </div>
                     <div className={'route-search-near-div'}>
-                        <span className={'route-search-near-label'}>Near:</span>
-                        <input className={'route-search-zip'} type={'number'} placeholder={'Zipcode'}
-                               onChange={this.handleChangeZipcode} value={this.state.zipcode}/>
+                        <span className={'route-search-near-label'}>City:</span>
+                        <input className={'route-search-city'} type={'text'} placeholder={'City'}
+                               onChange={this.handleChangeCity} value={this.state.city}/>
                     </div>
                     <button>Search</button>
                 </form>

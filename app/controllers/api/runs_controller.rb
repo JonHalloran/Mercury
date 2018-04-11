@@ -5,7 +5,7 @@ class Api::RunsController < ApplicationController
   end
 
   def show
-    @run = Run.find(params[:runId])
+    @run = Run.includes(:route, :user).find(params[:id])
   end
 
   def create

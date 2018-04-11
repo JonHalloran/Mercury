@@ -10,9 +10,9 @@ export const receiveRuns = runs => ({
   runs
 });
 
-export const receiveRun = run => ({
+export const receiveRun = payload => ({
   type: RECEIVE_RUN,
-  run
+  payload
 });
 
 export const receiveRunErrors = errors => ({
@@ -37,6 +37,8 @@ export const retrieveRuns = () => dispatch =>
 export const retrieveRun = runId => dispatch =>
   runAPIUtil
     .retrieveRun(runId)
-    .then(run =>
-      dispatch(receiveRun(run), errors => dispatch(receiveRunErrors(errors)))
+    .then(payload =>
+      dispatch(receiveRun(payload), errors =>
+        dispatch(receiveRunErrors(errors))
+      )
     );

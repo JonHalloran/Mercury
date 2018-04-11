@@ -7,7 +7,9 @@ const runReducer = (oldState = {}, action) => {
     case RECEIVE_RUNS:
       return action.runs;
     case RECEIVE_RUN:
-      return action.run;
+      return merge({}, oldState, {
+        [action.payload.run.id]: action.payload.run
+      });
     default:
       return oldState;
   }

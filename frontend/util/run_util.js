@@ -1,10 +1,10 @@
-export const getRuns = () =>
+export const retrieveRuns = () =>
   $.ajax({
     url: `api/runs/`,
     method: "GET"
   });
 
-export const getRun = runId =>
+export const retrieveRun = runId =>
   $.ajax({
     url: `api/runs/${runId}`,
     method: "GET"

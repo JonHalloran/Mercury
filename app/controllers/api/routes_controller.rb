@@ -1,11 +1,11 @@
 class Api::RoutesController < ApplicationController
 
   def index
-    if (params[:my] == 'true')
+    if params[:my] == 'true'
       @routes = current_user.routes.limit(10).includes(:creator)
     else
-      @routes = Route.all.where("name LIKE '%#{params[:name]}%'")
-      if (params[:dist_type] != 'dist_type')
+      @routes = Route.all.where("name LIKE '%#{params[:name]}%'").where("origin LIKE '%#{params[:origin]}%'")
+      if params[:dist_type] != 'dist_type'
         @routes = @routes.where("distance #{params[:dist_type]} #{params[:distance]}")
       end
       @routes = @routes.limit(10)
@@ -15,7 +15,7 @@ class Api::RoutesController < ApplicationController
 
   def show
     p params
-    @route = Route.find(params[:id])
+    @route = Route.includes(:creator).find(params[:id])
   end
 
 
