@@ -17,11 +17,13 @@ User.create!(password: 'password',
 )
 
 10.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
   User.create(
     password: 'password',
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    first_name: first_name,
+    last_name: last_name,
+    email: "#{first_name}@#{last_name}.com",
   )
 end
 
@@ -158,6 +160,6 @@ end
   Comment.create!(
     body: Faker::RickAndMorty.quote,
     user: User.all[rand(9)],
-    run: Run.all[rand(9)]
+    run: Run.all[rand(19)]
   )
 end
