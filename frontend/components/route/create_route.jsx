@@ -50,7 +50,8 @@ class CreateRoute extends React.Component {
         this.setState({routeName: e.target.value})
     }
 
-    handleNewRoute() {
+    handleNewRoute(e) {
+      e.preventDefault()
       if (this.state.routeName == '') {
         console.log("HERE!!!!");
         this.setState({routeErrors: ['The route must have a name']})
@@ -82,7 +83,7 @@ class CreateRoute extends React.Component {
         };
 
       removeAllWaypoint();
-      this.props.createRoute(newRoute).then(response => this.props.history.push(`/routes/${response.payload.route.id}`), );
+      this.props.createRoute(newRoute).then(response => this.props.history.push(`/routes/${response.payload.route.id}`) );
     }
 
 
@@ -90,7 +91,7 @@ class CreateRoute extends React.Component {
         let rootDetails;
         let errors;
         rootDetails = this.state.showRouteDetails ?
-            <form className={'route-details-form'} onSubmit={() => this.handleNewRoute()}>
+            <form className={'route-details-form'} onSubmit={this.handleNewRoute}>
                 <input className={'route-name'} placeholder={'Name this map'} value={this.state.routeName}
                        onChange={(e) => this.handleChangeName(e)}/>
                 <button className={'route-name-button'}>SAVE ROUTE</button>

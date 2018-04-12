@@ -5,6 +5,7 @@ import RunModalConatainer from '../run/run_modal_container'
 class RouteShow extends React.Component {
 
     constructor(props) {
+      console.log("TEST");
         super(props)
 
         this.state = {
