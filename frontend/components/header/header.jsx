@@ -62,16 +62,16 @@ class Header extends React.Component {
                             <div className={'main-nav-link'}>
                                 <Link to={'/workouts/'} className={'link'}>Workouts</Link>
                             </div>
-                            <div className={'dropdown-root'}>
+                            <div className={'dropdown-root routes-dropdown-root'}>
                                 <p>Routes</p>
-                                <ul className={'dropdown'}>
-                                    <li>
+                                <ul className={'dropdown routes-dropdown'}>
+                                    <li id={'routes-dropdown-li'}>
                                         <Link className={'link'} to={'/create_route/'}>Create Route</Link>
                                     </li>
-                                    <li>
+                                    <li id={'routes-dropdown-li'}>
                                         <Link className={'link'} to={'/search_routes/'}>Find Routes</Link>
                                     </li>
-                                    <li>
+                                    <li id={'routes-dropdown-li'}>
                                         <Link className={'link'} to={'/my_routes/'}>My Routes</Link>
                                     </li>
                                 </ul>

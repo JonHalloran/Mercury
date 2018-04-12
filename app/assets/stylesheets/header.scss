@@ -1,7 +1,6 @@
 .full-nav-bar {
-
   background-color: white;
-  box-shadow: 0 2px 8px #9E9E9E;
+  box-shadow: 0 2px 8px #9e9e9e;
   z-index: 1;
 
   .main-nav {
@@ -71,7 +70,6 @@
         margin-left: 15px;
         margin_top: 5px;
         color: #ccc;
-
       }
     }
     .logo-image {
@@ -97,7 +95,6 @@
       margin: 0;
       height: 40px;
       display: flex;
-
     }
 
     .dropdown:hover {
@@ -116,12 +113,10 @@
       justify-content: center;
 
       * {
-
       }
       .main-nav-links {
         display: flex;
         flex-direction: row;
-
       }
       .main-nav-link {
         font-size: 14px;
@@ -137,11 +132,15 @@
             margin-left: 10px;
           }
         }
-      }
 
+        .routes-dropdown {
+          left: 20px;
+          top: 30px;
+          width: 100px;
+        }
+      }
     }
   }
-
 }
 
 .dropdown-root {
@@ -155,4 +154,20 @@
   * {
     z-index: 1000;
   }
+}
+
+.routes-dropdown {
+  left: 20px;
+  top: 30px;
+  // border-bottom: 0.5px solid solid rgb(211, 214, 220);
+}
+
+#routes-dropdown-li {
+  border: 0.5px solid rgb(211, 214, 220);
+  border-bottom: none;
+  width: 90px;
+}
+
+#routes-dropdown-li:last-child {
+  border-bottom: 0.5px solid rgb(211, 214, 220);
 }

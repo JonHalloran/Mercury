@@ -8,6 +8,10 @@ class RouteIndex extends React.Component {
         super(props)
     }
 
+    componentWillUnmount() {
+      this.props.receiveRoutes()
+    }
+
     calculateIndexMap() {
         let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         let source = "https://maps.googleapis.com/maps/api/staticmap?size=640x350&maptype=roadmap"

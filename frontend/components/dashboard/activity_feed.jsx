@@ -1,6 +1,6 @@
 import React from 'react'
 import ActivityFeedRunContainer from './activity_feed_run_container'
-import ActivityFeedRouteContainer from './activity_feed_route_container'
+import ActivityFeedRoute from './activty_feed_route'
 
 class ActivityFeed extends React.Component {
 
@@ -18,10 +18,11 @@ class ActivityFeed extends React.Component {
   }
 
   render() {
+    return (<div />)
     debugger
     return(
       <div className={'actiity-feed'}>
-        <ul className={'activity-feed-ul'}
+        <ul className={'activity-feed-ul'}>
           {this.props.activityFeed.map(el => this.mapActivtyFeedItem(el))}
         </ul>
       </div>

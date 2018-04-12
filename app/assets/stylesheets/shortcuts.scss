@@ -4,6 +4,7 @@
   justify-content: space-between;
   margin: auto;
   border-top: 1px solid rgb(211, 214, 220);
+  box-sizing: border-box;
 
   li {
     flex-grow: 1;
@@ -14,7 +15,6 @@
     font-size: 14px;
     border-left: 1px solid rgb(211, 214, 220);
   }
-
 }
 
 .shortcut-links:last-child {
