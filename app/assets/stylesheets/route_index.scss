@@ -18,6 +18,7 @@
     border-right: 1px solid rgb(230, 230, 229);
     border-left: 1px solid rgb(230, 230, 229);
     border-top: 1px solid rgb(230, 230, 229);
+
     * {
       flex-grow: 1;
       flex-basis: 100px;
@@ -76,4 +77,8 @@
       background-color: #dddddd;
     }
   }
+}
+.route-index-items.route-index-titles {
+  align-items: center;
+  background-color: #f9f9f9;
 }

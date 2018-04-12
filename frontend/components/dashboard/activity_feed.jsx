@@ -1,6 +1,6 @@
 import React from 'react'
-import ActivityFeedRunContainer from './activity_feed_run_container'
-import ActivityFeedRoute from './activty_feed_route'
+// import ActivityFeedRunContainer from './activity_feed_run_container'
+// import ActivityFeedRoute from './activty_feed_route'
 
 class ActivityFeed extends React.Component {
 
@@ -11,15 +11,14 @@ class ActivityFeed extends React.Component {
 
   mapActivtyFeedItem(actFeedArr) {
     if (actFeedArr[1] === 'RUN') {
-      return (<ActivityFeedRunContainer run={actFeedArr[2]} />)
+      return (<div/>)
     }else {
-      return (<ActivityFeedRouteContainer route={actFeedArr[2]} />)
+      // return (<ActivityFeedRouteContainer route={actFeedArr[2]} />)
     }
   }
 
   render() {
-    return (<div />)
-    debugger
+    debugger;
     return(
       <div className={'actiity-feed'}>
         <ul className={'activity-feed-ul'}>
