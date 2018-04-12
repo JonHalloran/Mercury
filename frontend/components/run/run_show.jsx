@@ -71,38 +71,40 @@ class RunShow extends React.Component {
     console.log(this.state);
     return (
       <main className={'run-show-page'}>
-        <div id={'map'}>MAP!!!</div>
-        <div className={'runs-show-page-info-box'}>
-          <h2>{name}</h2>
-          <div className={'calculated-values'}>
-            <div className={'run-show-page-value-pair'}>
-              <section className={'run-show-page-value-title'} >Run By</section>
-              <section className={'run-show-page-value-number'}>{runner_name}</section>
+        <article className={'run-show-info'} >
+          <div id={'map'}>MAP!!!</div>
+          <div className={'runs-show-page-info-box'}>
+            <h2>{name}</h2>
+            <div className={'calculated-values'}>
+              <div className={'run-show-page-value-pair'}>
+                <section className={'run-show-page-value-title'} >Run By</section>
+                <section className={'run-show-page-value-number'}>{runner_name}</section>
+              </div>
+              <div className={'run-show-page-value-pair'}>
+                <section className={'run-show-page-value-title'} >Run On</section>
+                <section className={'run-show-page-value-number'}>{date}</section>
+              </div>
+              <div className={'run-show-page-value-pair'}>
+                <section className={'run-show-page-value-title'} >Distance</section>
+                <section className={'run-show-page-value-number'}>{dist}
+                <span className={'run-show-page-value-label'}>miles</span>
+                </section>
+              </div>
+              <div className={'run-show-page-value-pair'}>
+                <section className={'run-show-page-value-title'} >duration</section>
+                <section className={'run-show-page-value-number'}>{time}</section>
+              </div>
+              <div className={'run-show-page-value-pair'}>
+                <section className={'run-show-page-value-title'} >AVG Pace</section>
+                <section className={'run-show-page-value-number'}>{pace}
+                <span className={'run-show-page-value-label'}>/mile</span>
+                </section>
+              </div>
             </div>
-            <div className={'run-show-page-value-pair'}>
-              <section className={'run-show-page-value-title'} >Run On</section>
-              <section className={'run-show-page-value-number'}>{date}</section>
             </div>
-            <div className={'run-show-page-value-pair'}>
-              <section className={'run-show-page-value-title'} >Distance</section>
-              <section className={'run-show-page-value-number'}>{dist}
-              <span className={'run-show-page-value-label'}>miles</span>
-              </section>
-            </div>
-            <div className={'run-show-page-value-pair'}>
-              <section className={'run-show-page-value-title'} >duration</section>
-              <section className={'run-show-page-value-number'}>{time}</section>
-            </div>
-            <div className={'run-show-page-value-pair'}>
-              <section className={'run-show-page-value-title'} >AVG Pace</section>
-              <section className={'run-show-page-value-number'}>{pace}
-              <span className={'run-show-page-value-label'}>/mile</span>
-              </section>
-            </div>
-          </div>
-          </div>
-          <CommentFormContainer />
-          <CommentIndexContainer />
+        </article>
+        <CommentIndexContainer />
+        <CommentFormContainer />
       </main>
     )
   }

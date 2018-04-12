@@ -15,7 +15,7 @@ class CreateRoute extends React.Component {
         super(props)
 
         this.state = {
-            zipcode: '',
+            location: '',
             showRouteDetails: true,
             routeName: '',
             routeErrors: []
@@ -35,11 +35,11 @@ class CreateRoute extends React.Component {
 
 
     handleCenterChange() {
-        codeAddress(this.state.zipcode)
+        codeAddress(this.state.location)
     }
 
     handlChangeZipcode(e) {
-        this.setState({zipcode: e.target.value})
+        this.setState({location: e.target.value})
     }
 
     handleToggleRouteDetails() {
@@ -113,7 +113,7 @@ class CreateRoute extends React.Component {
                     <form className={'change-center'} onSubmit={() => this.handleCenterChange()}>
                         <p className={'choose-size'}> Choose map location</p>
                         <div className={'choose-center-zip-and-button'}>
-                            <input className={'zipcode'} type={'text'} placeholder={'Zipcode or City'}
+                            <input className={'location'} type={'text'} placeholder={'Zipcode or City'}
                                    onChange={(e) => this.handlChangeZipcode(e)}/>
                             <button className={'change-center-button'}>Search</button>
                         </div>

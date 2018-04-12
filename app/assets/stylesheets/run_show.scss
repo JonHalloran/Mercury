@@ -1,15 +1,24 @@
 .run-show-page {
+  display: flex;
+  flex-direction: column;
   width: 900px;
+  margin: auto;
+}
+
+.run-show-info {
   display: flex;
   flex-direction: row;
-  margin: auto;
   margin-top: 10px;
 
   #map {
-    width: 580px;
+    width: 610px;
     height: 300px;
     padding-top: 10px;
   }
+}
+
+.runs-show-page-info-box {
+  flex-grow: 1;
 }
 
 .runs-show-page-info-box {
@@ -51,4 +60,65 @@
 
 .run-show-page-value-number {
   font-size: 18px;
+}
+.create-comment-form {
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+  margin-top: 10px;
+
+  * {
+    font-size: 13px;
+  }
+}
+
+.create-comment-form-body {
+  max-width: 500;
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 5px;
+  height: 32px;
+  border: 1px solid rgb(195, 194, 194);
+}
+.create-comment-form-body:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(82, 168, 236, 0.6);
+  border-color: rgba(82, 168, 236, 0.8);
+}
+
+.create-comment-form-submit {
+  color: #2f98d9;
+  border: 1px solid #2f98d9;
+  background: white;
+  text-transform: uppercase;
+  padding: 0;
+  width: 52px;
+}
+
+.comments-index {
+  margin-top: 20px;
+  max-width: 609px;
+  border-top: 1px solid #c3c2c2;
+  padding-top: 10px;
+}
+
+.comment-index-item {
+  display: flex;
+  max-width: 609px;
+  flex-direction: column;
+  border-bottom: 1px solid #c3c2c2;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.comment-index-item-comment {
+  margin-top: 10px;
+  max-width: 609px;
+  word-wrap: break-word;
+  color: #666666;
+  font-size: 12px;
+}
+
+.comment-index-item-date {
+  font-size: 12px;
 }

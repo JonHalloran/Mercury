@@ -101,12 +101,11 @@ export const calcRoute = request => {
 };
 
 //Call this wherever needed to actually handle the display
-export const codeAddress = zipCode => {
+export const codeAddress = location => {
   geocoder = new google.maps.Geocoder();
   geocoder.geocode(
     {
-      address: zipCode,
-      componentRestrictions: { country: "US" }
+      address: location
     },
     function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {

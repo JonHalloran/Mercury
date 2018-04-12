@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_RUN } from "../actions/run_actions";
 import { RECEIVE_ROUTE } from "../actions/route_actions";
+import { RECEIVE_COMMENTS } from "../actions/comment_actions";
 import { merge } from "lodash";
 
 const usersReducer = (oldState = {}, action) => {
@@ -17,6 +18,8 @@ const usersReducer = (oldState = {}, action) => {
       return merge({}, oldState, {
         [action.payload.user.id]: action.payload.user
       });
+    case RECEIVE_COMMENTS:
+      return merge({}, oldState, action.payload.users);
     default:
       return oldState;
   }
