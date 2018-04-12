@@ -6,11 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+photos = [
+
+]
 User.create!(password: 'password',
             first_name: 'Demo',
             last_name: 'User',
             email: 'email'
 )
+
+10.times do
+  User.create(
+    password: 'password',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+  )
+end
+
 route_seeds = [{  creator: User.first,
     description: 'This is a 0.6 mi route that starts at 2230-2250 Franklin St, San Francisco, CA 94109, USA',
     name: 'asdf',
@@ -129,4 +143,21 @@ route_seeds = [{  creator: User.first,
 
 route_seeds.each do |route|
   Route.create!(route)
+end
+
+20.times do
+  Run.create!(
+    user: User.first,
+    route: Route.all[rand(8)],
+    duration: rand(5000),
+    date: "2018-4-10"
+  )
+end
+
+100.times do
+  Comment.create!(
+    body: Faker::RickAndMorty.quote,
+    user: User.all[rand(9)],
+    run: Run.all[rand(9)]
+  )
 end

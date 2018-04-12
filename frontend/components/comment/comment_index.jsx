@@ -11,7 +11,7 @@ class CommentIndex extends React.Component {
     console.log("comment index", this.props.users)
     if (!(this.props.comments.length  && this.props.users)) return (<div />)
     return(
-      <ul className={'comments-index'} >
+      <ul className={'comments-index-ul'} >
         {this.props.comments.map(comment =>
         <CommentIndexItem comment={comment} user={this.props.users[comment.user_id]} key={comment.id}/>)}
       </ul>

@@ -12,6 +12,7 @@ import RouteSearchContainer from './route/route_search_container'
 import RouteIndexContainer from './route/route_index_container'
 import MyRouteContainer from './route/my_routes_container'
 import RunShowContainer from './run/run_show_container'
+import RunIndexContainer from './run/run_index_container'
 
 export default () => (
     <div>
@@ -28,5 +29,6 @@ export default () => (
         <Route path={'/search_routes/'} component={RouteIndexContainer}/>
         <ProtectedRoute path={'/my_routes/'} component={MyRouteContainer}/>
         <Route path={'/runs/:runId'} component={RunShowContainer} />
+        <ProtectedRoute path={'/workouts/'} component={RunIndexContainer} />
     </div>
 )

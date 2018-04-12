@@ -1,0 +1,35 @@
+.run-index-ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.run-index {
+  max-width: 900px;
+  margin: auto;
+
+  h2 {
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: #444444;
+    font-size: 30px;
+  }
+}
+
+.run-index-item-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+  opacity: 0.8;
+  bottom: 15px;
+  box-shadow: 4px 3px 3px #444444;
+  padding: 5px;
+}
+
+.run-index-item {
+  position: relative;
+  margin: 20px;
+}

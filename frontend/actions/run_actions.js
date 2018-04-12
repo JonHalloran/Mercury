@@ -5,9 +5,9 @@ export const RECEIVE_RUN = "RECEIVE_RUN";
 export const RECEIVE_RUNS = "RECEIVE_RUNS";
 export const RECEIVE_RUN_ERRORS = "RECEIVE_RUN_ERRORS";
 
-export const receiveRuns = runs => ({
+export const receiveRuns = payload => ({
   type: RECEIVE_RUNS,
-  runs
+  payload
 });
 
 export const receiveRun = payload => ({
@@ -30,8 +30,10 @@ export const createRun = runForm => dispatch =>
 export const retrieveRuns = () => dispatch =>
   runAPIUtil
     .retrieveRuns()
-    .then(runs =>
-      dispatch(receiveRuns(runs), errors => dispatch(receiveRunErrors(errors)))
+    .then(payload =>
+      dispatch(receiveRuns(payload), errors =>
+        dispatch(receiveRunErrors(errors))
+      )
     );
 
 export const retrieveRun = runId => dispatch =>
