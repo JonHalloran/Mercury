@@ -13,7 +13,7 @@ photos = [
 User.create!(password: 'password',
             first_name: 'Demo',
             last_name: 'User',
-            email: Faker::Internet.email,
+            email: 'email'
 )
 
 10.times do
