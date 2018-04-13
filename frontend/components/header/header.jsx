@@ -18,9 +18,6 @@ class Header extends React.Component {
                         }}>Logout
                         </div>
                     </li>
-                    <li>
-                        <Link className={'link'} to={'/friends/'}>Friends</Link>
-                    </li>
                 </ul>
             </div>
         ) : (

@@ -9,10 +9,10 @@ export default () => (
                 <Link to={'/create_route/'} className={"link"}>Create Route</Link>
             </li>
             <li>
-                <Link to={'/workout/'} className={"link"}>Log Workout</Link>
+                <Link to={'/search_routes/'} className={"link"}>Search Routes</Link>
             </li>
             <li>
-                <Link to={'/goal/'} className={"link"}>Create a Goal</Link>
+                <Link to={'/workouts/'} className={"link"}>My Workouts</Link>
             </li>
         </ul>
     </div>
