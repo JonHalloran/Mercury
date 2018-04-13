@@ -41,7 +41,6 @@ class SignUp extends React.Component {
     }
 
     componentDidMount() {
-        console.log('errors', this.props.clearErrors);
         this
             .props
             .clearErrors();

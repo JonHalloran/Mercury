@@ -57,7 +57,7 @@ class CreateRoute extends React.Component {
     }
 
     handleNewRoute(e) {
-        // e.preventDefault()
+        e.preventDefault();
         if (this.state.routeName == '') {
             this.setState({routeErrors: ['The route must have a name']});
             return null;

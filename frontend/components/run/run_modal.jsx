@@ -38,7 +38,8 @@ class RunModal extends React.Component {
     };
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     let runForm = {
       route_id: this.props.match.params.routeId,
       duration: this.state.hours * 3600 + this.state.minutes * 60 + this.state.seconds,
