@@ -20,7 +20,7 @@ Mercury is an app to plan running routes as well as storing information about ru
   * See a summary of the total distance and time that you have run.
 
 ### Ability to Create Routes 
-  ![create route](https://res.cloudinary.com/dtw7iteso/image/upload/v1523655621/create_route.gif "Create Routes")
+  ![create route](https://res.cloudinary.com/dtw7iteso/image/upload/v1523658004/create_route_2.gif "Create Routes")
 
   Modified general initMap function provided by Google to be able to be used on several pages.  The required passing in a hash to specify whether markers can be added moved.
 
