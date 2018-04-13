@@ -18,8 +18,10 @@ class UserShow extends React.Component {
     for (var i = 0; i < this.props.runs.length; i++) {
       let run = this.props.runs[i]
       duration += run.duration
-      let routeDist = this.props.routes[run.route_id].distance
-      distance += routeDist
+      let route = this.props.routes[run.route_id]
+      if (route) {
+        distance += route.distance;
+      }
     }
     return [distance, duration];
   }
