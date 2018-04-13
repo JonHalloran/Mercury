@@ -1,34 +1,44 @@
-import React from 'react'
-import RouteIndexItem from './route_index_item'
-
+import React from 'react';
+import RouteIndexItem from './route_index_item';
 
 class RouteIndex extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     componentWillUnmount() {
-      this.props.receiveRoutes()
+        this
+            .props
+            .receiveRoutes();
     }
 
     calculateIndexMap() {
-        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        let source = "https://maps.googleapis.com/maps/api/staticmap?size=640x350&maptype=roadmap"
-        this.props.routes.forEach((route, ind) => {
-                let parsed = JSON.parse(route.request).origin.location;
-                source += `&markers=color:blue%7Clabel:${alphabet[ind]}%7C${parsed.lat},${parsed.lng}`
-            }
-        )
-        source += '&key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0'
-        return source
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let source = "https://maps.googleapis.com/maps/api/staticmap?size=640x350&maptype=roadmap";
+        this
+            .props
+            .routes
+            .forEach((route, ind) => {
+                let parsed = JSON
+                    .parse(route.request)
+                    .origin
+                    .location;
+                source += `&markers=color:blue%7Clabel:${alphabet[ind]}%7C${parsed.lat},${parsed.lng}`;
+            });
+        source += '&key=AIzaSyAdfqHssdl3Lpo_Lul6UOOGLwnfO85bbJ0';
+        return source;
     }
 
     render() {
-        if (this.props.routes.length === 0) return (null);
-        let source = this.calculateIndexMap()
-        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        let routes  = this.props.routes.slice(0,10)
+        if (this.props.routes.length === 0) 
+            return (null);
+        let source = this.calculateIndexMap();
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let routes = this
+            .props
+            .routes
+            .slice(0, 10);
         return (
             <div className={'route-index'}>
                 <img src={source} className={'route-index-map'}/>
@@ -42,14 +52,16 @@ class RouteIndex extends React.Component {
                         <span className={'route-index-city'}>City</span>
                         {/*<span className={'route-index-option'}>Options</span>*/}
                     </li>
-                    {routes.map((route, ind) => <RouteIndexItem key={route.id} route={route}
-                                                                           history={this.props.history}
-                                                                           ind={alphabet[ind]}/>)}
+                    {routes.map((route, ind) => <RouteIndexItem
+                        key={route.id}
+                        route={route}
+                        history={this.props.history}
+                        ind={alphabet[ind]}/>)}
                 </ul>
             </div>
-        )
+        );
 
     }
 }
 
-export default RouteIndex
+export default RouteIndex;

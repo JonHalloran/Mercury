@@ -1,41 +1,51 @@
-import React from 'react'
-import ActivityFeedRunContainer from './activity_feed_run_container'
-import ActivityFeedRoute from './activty_feed_route'
+import React from 'react';
+import ActivityFeedRunContainer from './activity_feed_run_container';
+import ActivityFeedRoute from './activty_feed_route';
 
 class ActivityFeed extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.mapActivtyFeedItem = this.mapActivtyFeedItem.bind(this)
+    this.mapActivtyFeedItem = this
+      .mapActivtyFeedItem
+      .bind(this);
   }
 
   componentDidMount() {
-    this.props.retrieveRuns();
-    this.props.retrieveRoutes();
+    this
+      .props
+      .retrieveRuns();
+    this
+      .props
+      .retrieveRoutes();
   }
 
   mapActivtyFeedItem(actFeedArr) {
     if (actFeedArr[1] === 'RUN') {
-      return (<ActivityFeedRunContainer runId={actFeedArr[2].id}
-                                        key={`run-${actFeedArr[2].id}`}/>)
-    }else {
-      return (<ActivityFeedRoute route={actFeedArr[2]}
-                                 user={this.props.users[actFeedArr[2].user_id]}
-                                 history={this.props.history}
-                                 key={`route-${actFeedArr[2].id}`}/>)
+      return (<ActivityFeedRunContainer
+        runId={actFeedArr[2].id}
+        key={`run-${actFeedArr[2].id}`}/>);
+    } else {
+      return (<ActivityFeedRoute
+        route={actFeedArr[2]}
+        user={this.props.users[actFeedArr[2].user_id]}
+        history={this.props.history}
+        key={`route-${actFeedArr[2].id}`}/>);
     }
   }
 
   render() {
-    return(
+    return (
       <div className={'activity-feed'}>
         <ul className={'activity-feed-ul'}>
-          {this.props.activityFeed.map(el => this.mapActivtyFeedItem(el))}
+          {this
+            .props
+            .activityFeed
+            .map(el => this.mapActivtyFeedItem(el))}
         </ul>
       </div>
-    )
+    );
   }
 }
 
-
-export default ActivityFeed
+export default ActivityFeed;

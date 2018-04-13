@@ -1,12 +1,12 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Header extends React.Component {
 
 
     render() {
-        let session_routes = ['/login/', '/signup/', '/login', '/signup']
-        let loggingIn = session_routes.includes(this.props.location.pathname)
+        let session_routes = ['/login/', '/signup/', '/login', '/signup'];
+        let loggingIn = session_routes.includes(this.props.location.pathname);
         let buttons = this.props.loggedIn ? (
             <div className={'dropdown-root'}>
                 <img
@@ -14,7 +14,7 @@ class Header extends React.Component {
                 <ul className={'dropdown'}>
                     <li>
                         <div className={'link'} onClick={() => {
-                            this.props.logout().then(() => this.props.history.push('/'))
+                            this.props.logout().then(() => this.props.history.push('/'));
                         }}>Logout
                         </div>
                     </li>
@@ -40,7 +40,7 @@ class Header extends React.Component {
         );
 
         if (loggingIn) {
-            buttons = <div></div>
+            buttons = <div></div>;
         }
 
         return (
@@ -48,7 +48,7 @@ class Header extends React.Component {
                 <nav className={'main-nav'}>
                     <div className={'logo-and-links'}>
                         <div className={'logo link'} onClick={() => {
-                            this.props.history.push('/')
+                            this.props.history.push('/');
                         }}>
                             <img className={'logo-image'}
                                  src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964575/Mercury/hermes-silver.png'}/>
@@ -77,8 +77,8 @@ class Header extends React.Component {
                     {buttons}
                 </nav>
             </div>
-        )
+        );
     }
 }
 
-export default Header
+export default Header;

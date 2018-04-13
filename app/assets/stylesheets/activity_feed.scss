@@ -63,6 +63,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .activity-feed-distance-title {
   text-transform: uppercase;
   font-size: 10px;
@@ -95,7 +96,6 @@
 .activity-feed-run-middle {
   display: flex;
   flex-direction: row;
-
   background-color: #f8f8f8;
   .activity-feed-distance-box {
     max-width: 165px;
@@ -117,6 +117,7 @@
   max-width: 165px;
   flex: 1;
 }
+
 .actiity-feed-pace-amount {
   font-size: 42px;
   color: #666666;

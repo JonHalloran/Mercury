@@ -1,8 +1,7 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-
-export default () => (
+export default() => (
     <div className={'shortcut-links-div'}>
         <ul className={'shortcut-links'}>
             <li>
@@ -16,4 +15,4 @@ export default () => (
             </li>
         </ul>
     </div>
-)
+);

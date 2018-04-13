@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 class RunIndexItem extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
   }
 
   convert(seconds) {
@@ -14,25 +14,25 @@ class RunIndexItem extends React.Component {
     var seconds = Math.floor(seconds % 3600 % 60);
     var time = '';
     if (hours > 0) {
-      time += hours + ':'
+      time += hours + ':';
     }
     if (minutes < 10 && hours > 0){
-      time += '0'
+      time += '0';
     }
-    time += minutes + ':'
+    time += minutes + ':';
     if (seconds < 10){
-      time += '0'
+      time += '0';
     }
-    time += seconds
+    time += seconds;
     return time;
   }
 
   handleClick() {
-    this.props.history.push(`/runs/${this.props.run.id}`)
+    this.props.history.push(`/runs/${this.props.run.id}`);
   }
 
   render() {
-    let time = this.convert(this.props.run.duration)
+    let time = this.convert(this.props.run.duration);
     return (
     <li className={'run-index-item'} onClick={this.handleClick}>
       <img
@@ -44,7 +44,7 @@ class RunIndexItem extends React.Component {
         <span className={'run-index-item-date'}>{this.props.run.date}</span>
       </div>
     </li>
-  )}
+  );}
 }
 
-export default RunIndexItem
+export default RunIndexItem;
