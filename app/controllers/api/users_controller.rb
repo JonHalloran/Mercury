@@ -5,11 +5,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(user_params.email)
+    @user = User.find(params[:id])
   end
 
   def create
     @user = User.new(user_params)
+    @user.photo_url = 'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964206/Mercury/Hermes_pushkin_01.jpg'
     if @user.save
       login(@user)
       render :show

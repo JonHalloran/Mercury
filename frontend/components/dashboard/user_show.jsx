@@ -27,12 +27,13 @@ class UserShow extends React.Component {
   }
 
   render () {
+    debugger;
     let runs = this.props.runs;
     if (!runs) return (<div />);
     let user = this.props.user;
     if (!user) return (<div />);
     let routes = this.props.routes;
-    if (!routes || routes.length === 0) return (<div />);
+    if (!routes ) return (<div />);
     let name = user.first_name + " " + user.last_name;
     let sumAmount = this.totalAmounts()
     let sumDistance = Math.round(sumAmount[0], 1)

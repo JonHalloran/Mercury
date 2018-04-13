@@ -1,3 +1,6 @@
+json.routes ({})
+json.users ({})
+
 
 @routes.each do |route|
   json.routes do

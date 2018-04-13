@@ -17,3 +17,10 @@ export const logout = () =>
     url: `api/session`,
     method: "DELETE"
   });
+
+export const retrieveUser = userId => {
+  $.ajax({
+    url: `api/users/${userId}`,
+    method: "GET"
+  });
+};
