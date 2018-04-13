@@ -42,7 +42,6 @@ class RouteSearch extends React.Component {
     }
 
     handleSubmit() {
-        console.log(this.state)
         this.props.retrieveRoutes(this.state)
     };
 

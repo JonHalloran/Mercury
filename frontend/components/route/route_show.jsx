@@ -5,7 +5,6 @@ import RunModalConatainer from '../run/run_modal_container'
 class RouteShow extends React.Component {
 
     constructor(props) {
-      console.log("TEST");
         super(props)
 
         this.state = {
@@ -23,7 +22,6 @@ class RouteShow extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-      console.log(newProps);
         if (this.props.match.params.routeId !== newProps.match.params.routeId) {
             this.props.retrieveRoute(newProps.match.params.routeId).then(response => calcRoute(JSON.parse(response.payload.route.request)))
         }
@@ -37,7 +35,6 @@ class RouteShow extends React.Component {
     }
 
     render() {
-      console.log('this props', this.props);
         let route = this.props.route;
         let distance = [0, 'miles'];
         let origin = 'Neverland';

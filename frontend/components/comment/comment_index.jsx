@@ -8,7 +8,6 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    console.log("comment index", this.props.users)
     if (!(this.props.comments.length  && this.props.users)) return (<div />)
     return(
       <ul className={'comments-index-ul'} >

@@ -6,7 +6,6 @@ import CommentIndexContainer from "../comment/comment_index_container"
 class RunShow extends React.Component {
   constructor(props){
     super(props)
-    console.log(props)
     this.state = {
       run: this.props.run,
       route: this.props.route,
@@ -67,8 +66,6 @@ class RunShow extends React.Component {
     const time = this.convert(duration)
     const pace = this.convert(Math.round(duration/dist))
 
-
-    console.log(this.state);
     return (
       <main className={'run-show-page'}>
         <article className={'run-show-info'} >

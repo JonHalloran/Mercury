@@ -2,14 +2,13 @@ import React from 'react';
 
 export default({route, user, history}) => {
   if (!route) return (<div />)
-  console.log(user.photo_url)
   let name = user.first_name + " " + user.last_name;
   return (
-  <li className={'activity-feed-route-item'}
+  <li className={'activity-feed-item'}
       onClick={() => history.push(`/routes/${route.id}`)}>
     <img  className={'activity-feed-user-img'}
           src={`${user.photo_url}`} />
-    <div className={'activity-feed-route-box'} >
+    <div className={'activity-feed-box'} >
       <section className={'activity-feed-route-top'}>{`${name} created the route ${route.name}`}
       </section>
       <article className= {'activity-feed-route-middle'}>

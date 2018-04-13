@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  receiveRoutes: () => dispatch(receiveRoutes({}))
+  receiveRoutes: () => dispatch(receiveRoutes({ routes: {} }))
 });
 
 export default withRouter(

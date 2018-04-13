@@ -8,7 +8,6 @@ class RunIndex extends React.Component {
   }
 
   render() {
-    console.log("ri", this.props)
     if (!this.props.runs) return (<div>LOADING</div>)
     return(
       <div className={'run-index'}>

@@ -2,7 +2,7 @@ class Api::RoutesController < ApplicationController
 
   def index
     if params[:my] == 'true'
-      @routes = current_user.routes.limit(10).includes(:creator)
+      @routes = current_user.routes.includes(:creator)
     else
       name = params[:name] != "" ? params[:name].upcase! : ''
       origin = params[:city] != "" ? params[:city].upcase! : ''
@@ -11,7 +11,7 @@ class Api::RoutesController < ApplicationController
       if params[:dist_type] != 'dist_type'
         @routes = @routes.where("distance #{params[:dist_type]} #{params[:distance]}")
       end
-      @routes = @routes.limit(10)
+      @routes = @routes
       render :json, @routes
     end
   end

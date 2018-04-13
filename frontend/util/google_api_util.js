@@ -130,7 +130,6 @@ export const mapExists = () => {
 };
 
 export const removeClicks = () => {
-  console.log(clickListener);
   google.maps.event.removeListener(clickListener);
   directionsDisplay = new google.maps.DirectionsRenderer({
     draggable: false

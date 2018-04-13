@@ -17,7 +17,7 @@ class ActivityFeed extends React.Component {
   mapActivtyFeedItem(actFeedArr) {
     if (actFeedArr[1] === 'RUN') {
       return (<ActivityFeedRunContainer runId={actFeedArr[2].id}
-                                        key={`run-${actFeedArr[2]}`}/>)
+                                        key={`run-${actFeedArr[2].id}`}/>)
     }else {
       return (<ActivityFeedRoute route={actFeedArr[2]}
                                  user={this.props.users[actFeedArr[2].user_id]}
@@ -28,7 +28,7 @@ class ActivityFeed extends React.Component {
 
   render() {
     return(
-      <div className={'actiity-feed'}>
+      <div className={'activity-feed'}>
         <ul className={'activity-feed-ul'}>
           {this.props.activityFeed.map(el => this.mapActivtyFeedItem(el))}
         </ul>

@@ -29,7 +29,6 @@ class CreateRoute extends React.Component {
 
 
     componentDidMount() {
-      console.log('did mount');
       initMap({draggable: true, clickable:true});
     }
 
@@ -53,7 +52,6 @@ class CreateRoute extends React.Component {
     handleNewRoute(e) {
       // e.preventDefault()
       if (this.state.routeName == '') {
-        console.log("HERE!!!!");
         this.setState({routeErrors: ['The route must have a name']})
         return null;
       }
