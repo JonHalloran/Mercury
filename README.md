@@ -46,7 +46,7 @@ export const initMap = ({ draggable, clickable }) => {
 
 
 ### Ability to Create Runs
-  ![create route](https://res.cloudinary.com/dtw7iteso/image/upload/v1523656373/create_run.gif "Create Routes")
+  ![create route](https://res.cloudinary.com/dtw7iteso/image/upload/v1523658547/create_run_2.gif "Create Routes")
 
   Used a modal to log new workouts.  Calculated total duration to be run in seconds to limit necessary storage in teh database.
 
