@@ -11,8 +11,7 @@ class Api::RoutesController < ApplicationController
       if params[:dist_type] != 'dist_type'
         @routes = @routes.where("distance #{params[:dist_type]} #{params[:distance]}")
       end
-      @routes = @routes
-      render :json, @routes
+      # @routes = @routes
     end
   end
 
