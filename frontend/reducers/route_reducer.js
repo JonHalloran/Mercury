@@ -6,7 +6,7 @@ const routeReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_ROUTES:
-      return action.routes;
+      return action.payload.routes;
     case RECEIVE_ROUTE:
       return merge({}, oldState, {
         [action.payload.route.id]: action.payload.route

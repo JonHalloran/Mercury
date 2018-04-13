@@ -6,13 +6,13 @@ class Api::RoutesController < ApplicationController
     else
       name = params[:name] != "" ? params[:name].upcase! : ''
       origin = params[:city] != "" ? params[:city].upcase! : ''
-      @routes = Route.all.where("UPPER(name) LIKE '%#{name}%'")
+      @routes = Route.includes(:creator).all.where("UPPER(name) LIKE '%#{name}%'")
                          .where("UPPER(origin) LIKE '%#{origin}%'")
       if params[:dist_type] != 'dist_type'
         @routes = @routes.where("distance #{params[:dist_type]} #{params[:distance]}")
       end
       @routes = @routes.limit(10)
-      p @routes
+      render :json, @routes
     end
   end
 

@@ -1,0 +1,81 @@
+.activity-feed-ul {
+  li {
+    margin-top: 15px;
+    cursor: pointer;
+  }
+}
+
+.activity-feed-user-img {
+  height: 52px;
+  width: 52px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.activity-feed-ul {
+  display: flex;
+  flex-direction: column;
+  max-width: 580px;
+  margin: auto;
+}
+
+.activity-feed-route-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.activity-feed-route-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cdcdcd;
+}
+
+.activity-feed-distance-logo {
+  height: 20px;
+  width: 20px;
+}
+
+.activity-feed-route-middle {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: row;
+}
+
+.activity-feed-distance-box {
+  max-width: 250px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.activity-feed-route-top {
+  color: #666666;
+  border-bottom: 1px solid #cdcdcd;
+  line-height: 50px;
+  padding-left: 10px;
+}
+
+.activity-feed-distance-logo-and-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.activity-feed-distance-title {
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.actiity-feed-distance-amount {
+  font-size: 42px;
+  color: #666666;
+}
+
+.actiity-feed-distance-units {
+  color: #999999;
+  font-size: 16px;
+  margin-left: 3px;
+}

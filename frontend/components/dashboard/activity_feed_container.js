@@ -6,7 +6,8 @@ import { activityFeed } from "../../selectors/selectors.js";
 import ActivityFeed from "./activity_feed";
 
 const mapStateToProps = state => ({
-  activityFeed: activityFeed(state, state.session.currentUser.id)
+  activityFeed: activityFeed(state, state.session.currentUser.id),
+  users: state.entities.users
 });
 
 const mapDispatchToProps = dispatch => ({
