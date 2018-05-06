@@ -1,15 +1,14 @@
 .route-index {
   margin-top: 20px;
   margin: auto;
-  max-width: 900px;
+  max-width: 80vw;
   padding-top: 10px;
-
   .route-index-map {
     width: 100%;
     padding-bottom: 10px;
   }
   .route-index-list {
-    max-width: 900px;
+    max-width: 80vw;
   }
   .route-index-items {
     display: flex;
@@ -18,7 +17,6 @@
     border-right: 1px solid rgb(230, 230, 229);
     border-left: 1px solid rgb(230, 230, 229);
     border-top: 1px solid rgb(230, 230, 229);
-
     * {
       flex-grow: 1;
       flex-basis: 100px;
@@ -32,7 +30,6 @@
       padding: 5px 0;
       display: block;
     }
-
     .route-index-order {
       max-width: 40px;
     }
@@ -41,7 +38,6 @@
       align-items: center;
       justify-content: center;
     }
-
     *:last-child {
       border-right: none;
     }
@@ -52,7 +48,6 @@
       margin-right: auto;
       display: block;
     }
-
     span {
       text-align: center;
     }
@@ -65,19 +60,18 @@
   li:last-child {
     border-bottom: 1px solid rgb(230, 230, 229);
   }
-
   li:nth-child(odd) {
     * {
       background-color: #f9f9f9;
     }
   }
-
   li:nth-child(even) {
     * {
       background-color: #dddddd;
     }
   }
 }
+
 .route-index-items.route-index-titles {
   align-items: center;
   background-color: #f9f9f9;

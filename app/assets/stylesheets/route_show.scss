@@ -1,14 +1,12 @@
 .route-show {
   display: flex;
   justify-content: center;
-
   #map {
-    width: 900px;
+    width: 80vw;
     height: 450px;
     padding-top: 10px;
     border-top: 1px solid #666;
   }
-
   .route-show-main {
     width: 600px;
     margin: 20px 10px;
@@ -16,7 +14,6 @@
     .route-show {
       display: flex;
       justify-content: left;
-
       h1 {
         text-align: left;
         padding-bottom: 10px;
@@ -27,7 +24,6 @@
         text-transform: uppercase;
       }
     }
-
     .route-show-not-title {
       display: flex;
       flex-direction: row;
@@ -36,47 +32,37 @@
         width: 110px;
         margin-right: 20px;
         padding: 10px 0;
-        background-image: linear-gradient(
-          rgb(246, 244, 244) 0px,
-          rgb(251, 249, 249) 100%
-        );
+        background-image: linear-gradient( rgb(246, 244, 244) 0px, rgb(251, 249, 249) 100%);
         border: 1px solid rgb(195, 194, 194);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
         .distance-label {
           color: #999999;
           font-size: 12px;
         }
-
         .distance-amount {
           color: #434343;
           font-size: 30px;
         }
       }
-
       .route-details {
         display: flex;
         flex-direction: column;
-
         * {
           font-size: 14px;
         }
-
         li {
           display: flex;
           flex-direction: row;
           margin-bottom: 15px;
-
           .route-show-title {
             width: 120px;
             color: #666;
             font-weight: 700;
             padding-right: 5px;
           }
-
           .route-show-information {
             width: 350px;
           }
@@ -84,42 +70,29 @@
       }
     }
   }
-
   .route-show-aside {
     min-width: 300px;
-
     .route-show-aside-buttons {
       margin-top: 40px;
       display: flex;
       flex-direction: column;
       padding: 20px;
       border: 1px solid #ddd;
-
       button {
         border-radius: 5px;
         height: 29px;
         padding: 5.5px 0;
       }
-
       .route-show-create-route-button {
-        background-image: linear-gradient(
-          rgb(182, 182, 182) 5%,
-          rgb(169, 166, 166) 100%
-        );
+        background-image: linear-gradient( rgb(182, 182, 182) 5%, rgb(169, 166, 166) 100%);
       }
-
       .route-show-create-route-button:hover {
-        background-image: linear-gradient(
-          rgb(135, 133, 133) 5%,
-          rgb(94, 94, 94) 100%
-        );
+        background-image: linear-gradient( rgb(135, 133, 133) 5%, rgb(94, 94, 94) 100%);
       }
-
       .route-show-log-workout {
         margin-top: 15px;
         background: linear-gradient(to bottom, #ff9628 5%, #ff8714 100%);
       }
-
       .route-show-log-workout:hover {
         background: linear-gradient(to bottom, #f08a15 5%, #e56e06 100%);
       }

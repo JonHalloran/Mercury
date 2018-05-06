@@ -1,11 +1,10 @@
 .shortcut-links {
-  max-width: 900px;
+  max-width: 80vw;
   display: flex;
   justify-content: space-between;
   margin: auto;
   border-top: 1px solid rgb(211, 214, 220);
   box-sizing: border-box;
-
   li {
     flex-grow: 1;
     display: flex;

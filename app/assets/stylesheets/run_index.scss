@@ -1,14 +1,14 @@
 .run-index-ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding-top: 10px;
   border-top: 1px solid #e2e2e2;
 }
 
 .run-index {
-  max-width: 900px;
+  max-width: 80vw;
   margin: auto;
-
   h2 {
     padding: 10px 0;
     text-transform: uppercase;

@@ -15,7 +15,7 @@
 .activity-feed-ul {
   display: flex;
   flex-direction: column;
-  max-width: 580px;
+  max-width: 640px;
   margin: auto;
 }
 
@@ -98,7 +98,7 @@
   flex-direction: row;
   background-color: #f8f8f8;
   .activity-feed-distance-box {
-    max-width: 165px;
+    max-width: 200px;
     flex: 1;
   }
 }
@@ -114,7 +114,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  max-width: 165px;
+  max-width: 200px;
   flex: 1;
 }
 
