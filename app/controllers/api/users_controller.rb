@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.photo_url = 'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964206/Mercury/Hermes_pushkin_01.jpg'
+    @user.photo_url = 'https://res.cloudinary.com/dtw7iteso/image/upload/v1525649346/Rick_Sanchez.png'
     if @user.save
       login(@user)
       render :show

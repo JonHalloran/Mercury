@@ -11,10 +11,10 @@ photos = [
 
 ]
 User.create!(password: 'password',
-            first_name: 'Demo',
-            last_name: 'User',
+            first_name: 'Rick',
+            last_name: 'Sanchez',
             email: 'email',
-            photo_url: 'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964206/Mercury/Hermes_pushkin_01.jpg'
+            photo_url: 'https://res.cloudinary.com/dtw7iteso/image/upload/v1525649346/Rick_Sanchez.png'
 )
 
 10.times do
@@ -25,7 +25,7 @@ User.create!(password: 'password',
     first_name: first_name,
     last_name: last_name,
     email: "#{first_name}@#{last_name}.com",
-    photo_url: 'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964206/Mercury/Hermes_pushkin_01.jpg'
+    photo_url: 'https://res.cloudinary.com/dtw7iteso/image/upload/v1525649346/Rick_Sanchez.png'
   )
 end
 

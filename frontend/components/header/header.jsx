@@ -10,7 +10,7 @@ class Header extends React.Component {
         let buttons = this.props.loggedIn ? (
             <div className={'dropdown-root'}>
                 <img
-                    src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1522964206/Mercury/Hermes_pushkin_01.jpg'}/>
+                    src={'https://res.cloudinary.com/dtw7iteso/image/upload/v1525649346/Rick_Sanchez.png'}/>
                 <ul className={'dropdown'}>
                     <li>
                         <div className={'link'} onClick={() => {
