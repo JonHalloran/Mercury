@@ -31,5 +31,13 @@
 
 .run-index-item {
   position: relative;
+  cursor: pointer;
+  border-radius: 10px;
   margin: 20px;
+}
+
+.run-index-item:hover {
+  box-sizing: border-box;
+  padding: none;
+  background-color: #1ddd7c;
 }
