@@ -1,11 +1,9 @@
-
 .splash-page {
-  background-image: url('https://res.cloudinary.com/dtw7iteso/image/upload/v1523046950/pixelbay.jpg');
+  background-image: url('http://res.cloudinary.com/dtw7iteso/image/upload/c_crop,h_1983,r_0,w_4033,x_0,y_465/v1525646389/landscape-78058.jpg');
   background-size: cover;
   height: 80vw;
   width: auto;
   align-content: right;
-  max-width: 1200px;
   margin: auto;
   background-position: center;
   * {
@@ -15,19 +13,14 @@
     font-size: 50px;
     font-weight: 500;
   }
-
   .splash-words {
     text-align: right;
     margin-right: 20px;
     padding-top: 50px;
     width: 290px;
     float: right;
-
     * {
       margin-top: 50px
     }
-
   }
-
 }
-
