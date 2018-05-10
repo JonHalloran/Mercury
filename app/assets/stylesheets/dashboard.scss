@@ -1,23 +1,18 @@
 .dashboard {
   display: flex;
-  flex-direction: row;
-  max-width: 80vw;
+  flex-direction: column-reverse;
+  width: 80vw;
   margin: auto;
 }
 
 .user-info-sidebar {
   padding: 10px;
   margin-top: 5px;
-  max-width: 300px;
-  flex-grow: 1;
-  flex-basis: 200px;
+  width: 80vw;
 }
 
 .activity-feed {
-  width: 600px;
-  max-width: 600px;
-  flex-grow: 2;
-  flex-basis: 400px;
+  width: 80vw;
 }
 
 .user-prof-info {
@@ -57,4 +52,16 @@
   text-transform: uppercase;
   color: #b5b5b5;
   font-size: 14px;
+}
+
+@media(min-width:800px) {
+  .dashboard {
+    flex-direction: row;
+  }
+  .user-info-sidebar {
+    width: 25vw;
+  }
+  .activity-feed {
+    width: 55vw;
+  }
 }
